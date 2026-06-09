@@ -1,0 +1,892 @@
+# BASE DE CONHECIMENTO COMPLETA PARA IA – DIABETES MELLITUS TIPO 1 PEDIÁTRICO
+
+## Versão: 1.0 (Baseada em Diretrizes ISPAD 2024, ADA 2025, SBD 2025, OMS, Ministério da Saúde)
+
+---
+
+## ÍNDICE
+
+1. [O QUE É DIABETES MELLITUS TIPO 1](#1-o-que-é-diabetes-mellitus-tipo-1)
+2. [DIFERENÇA ENTRE DM1 E DM2](#2-diferença-entre-dm1-e-dm2)
+3. [DIAGNÓSTICO E RASTREAMENTO](#3-diagnóstico-e-rastreamento)
+4. [INSULINOTERAPIA COMPLETA](#4-insulinoterapia-completa)
+5. [TIPOS DE INSULINA E PERFIS](#5-tipos-de-insulina-e-perfis)
+6. [ARMAZENAMENTO E VALIDADE](#6-armazenamento-e-validade)
+7. [ROTAÇÃO DOS LOCAIS DE APLICAÇÃO](#7-rotação-dos-locais-de-aplicação)
+8. [MEDIÇÃO DA GLICEMIA (SMBG)](#8-medição-da-glicemia-smbg)
+9. [MONITORIZAÇÃO CONTÍNUA DA GLICOSE (CGM)](#9-monitorização-contínua-da-glicose-cgm)
+10. [HIPOGLICEMIA – RECONHECIMENTO E TRATAMENTO](#10-hipoglicemia--reconhecimento-e-tratamento)
+11. [HIPERGLICEMIA E CETOACIDOSE (CAD)](#11-hiperglicemia-e-cetoacidose-cad)
+12. [ALIMENTAÇÃO E CONTAGEM DE CARBOIDRATOS](#12-alimentação-e-contagem-de-carboidratos)
+13. [ATIVIDADE FÍSICA E EXERCÍCIO](#13-atividade-física-e-exercício)
+14. [DIAS DE DOENÇA (REGRAS DE MANEJO)](#14-dias-de-doença-regras-de-manejo)
+15. [CUIDADOS NA ESCOLA](#15-cuidados-na-escola)
+16. [CUIDADOS EM VIAGENS](#16-cuidados-em-viagens)
+17. [TECNOLOGIAS APLICADAS (BOMBAS E SISTEMAS AID)](#17-tecnologias-aplicadas-bombas-e-sistemas-aid)
+18. [SAÚDE MENTAL DA CRIANÇA E FAMÍLIA](#18-saúde-mental-da-criança-e-família)
+19. [COMPLICAÇÕES CRÔNICAS E RASTREAMENTO](#19-complicações-crônicas-e-rastreamento)
+20. [PRIMEIROS DIAS APÓS O DIAGNÓSTICO](#20-primeiros-dias-após-o-diagnóstico)
+21. [EDUCAÇÃO EM DIABETES PARA FAMILIARES](#21-educação-em-diabetes-para-familiares)
+22. [POLÍTICAS PÚBLICAS E ACESSO A INSUMOS](#22-políticas-públicas-e-acesso-a-insumos)
+23. [PLANO DE AÇÃO PARA EMERGÊNCIAS (CARTÃO RESUMO)](#23-plano-de-ação-para-emergências-cartão-resumo)
+
+---
+
+## 1. O QUE É DIABETES MELLITUS TIPO 1
+
+### Definição
+O DM1 é uma doença autoimune crônica caracterizada pela destruição seletiva das células β (beta) do pâncreas, levando à deficiência absoluta de insulina. Sem insulina, a glicose não consegue entrar nas células, acumula‑se no sangue (hiperglicemia) e o corpo passa a utilizar gorduras como fonte de energia, produzindo corpos cetônicos que podem levar à cetoacidose.
+
+### Explicação Técnica
+- **Prevalência:** 5‑10% de todos os casos de diabetes.
+- **Pico de incidência:** 10‑14 anos, mas pode ocorrer em qualquer idade.
+- **Autoanticorpos:** anti‑GAD, anti‑IA2, anti‑insulina, anti‑ZnT8 (presentes em 85‑90% dos casos).
+- **Marcadores genéticos:** HLA DR3‑DQ2 e DR4‑DQ8.
+- **Destruição das células β:** atinge 80‑90% da massa funcional antes do surgimento dos sintomas clínicos.
+- **Fisiopatologia:** hiperglicemia → diurese osmótica (poliúria) → desidratação → polidipsia; perda de peso por catabolismo proteico e lipídico; cetoacidose por produção excessiva de corpos cetônicos.
+
+### Explicação Simplificada
+O sistema imunológico ataca por engano as células do pâncreas que produzem insulina. Sem insulina, o açúcar (glicose) não entra nas células e se acumula no sangue. O corpo, sem energia, começa a queimar gordura, produzindo substâncias ácidas (cetonas) que podem intoxicar o organismo. A pessoa precisa receber insulina todos os dias para viver.
+
+### Boas Práticas
+- Diagnóstico precoce → iniciar insulina imediatamente.
+- Esquema basal‑bolus (insulina de ação prolongada + ação rápida) – padrão‑ouro.
+- Equipe multidisciplinar: médico, enfermeiro educador, nutricionista, psicólogo.
+- Automonitorização frequente (4‑10 vezes/dia ou CGM).
+- Educação continuada da família.
+
+### Erros Comuns
+- Suspender insulina mesmo que temporariamente → risco de cetoacidose.
+- Acreditar que DM1 tem relação com alimentação ou estilo de vida (mito).
+- Tratar DM1 apenas com metformina ou outros antidiabéticos orais.
+- Subestimar a necessidade de ajustes frequentes de dose, principalmente durante crescimento e puberdade.
+
+### Sinais de Alerta
+- Poliúria (urina excessiva, principalmente à noite – enurese secundária).
+- Polidipsia (sede excessiva, não melhora com líquidos).
+- Polifagia (fome excessiva) associada a perda de peso.
+- Fadiga, irritabilidade, visão turva.
+- Infecções de repetição (candidíase genital, furúnculos, pneumonia).
+
+### Emergências
+- **Cetoacidose diabética (CAD):** hiperglicemia grave, desidratação, acidose, cetonemia. Pode evoluir para coma e morte. Tratamento hospitalar com hidratação venosa, insulina IV, reposição de eletrólitos.
+- **Hipoglicemia grave:** glicemia < 54 mg/dL com necessidade de assistência de terceiros. Tratamento com glucagon (IM/SC ou nasal) ou glicose venosa.
+
+### Perguntas Frequentes
+**P:** O DM1 é causado por consumo de açúcar?  
+**R:** Não. É uma doença autoimune. Nenhum hábito alimentar causa ou previne o DM1.
+
+**P:** Existe cura?  
+**R:** Atualmente não. O tratamento é a reposição vitalícia de insulina e cuidados intensivos.
+
+**P:** Pessoas com DM1 podem ter vida normal?  
+**R:** Sim, com tratamento adequado, educação e suporte, podem estudar, trabalhar, praticar esportes e ter qualidade de vida semelhante à população geral.
+
+---
+
+## 2. DIFERENÇA ENTRE DM1 E DM2
+
+| Característica | DM1 | DM2 |
+|----------------|-----|-----|
+| Idade típica | Infância, adolescência | >40 anos (mas está aumentando em crianças) |
+| Peso corporal | Geralmente normal ou baixo | Frequentemente sobrepeso/obesidade |
+| Início dos sintomas | Agudo (dias a semanas) | Insidioso (anos), muitas vezes assintomático |
+| Autoanticorpos | Presentes | Ausentes |
+| Peptídeo C | Baixo ou indetectável | Normal ou elevado (resistência insulínica) |
+| Cetoacidose na apresentação | Comum | Rara |
+| Tratamento inicial | Insulina obrigatória | Estilo de vida + metformina |
+| Associação genética | HLA (DR3‑DQ2, DR4‑DQ8) | Variantes associadas à resistência à insulina |
+
+### Explicação Simplificada
+DM1 = o pâncreas para de produzir insulina (fábrica fechada).  
+DM2 = o corpo se torna resistente à insulina e o pâncreas não consegue compensar (chave enferrujada).  
+DM1 **sempre** precisa de insulina. DM2 pode começar com dieta, exercício e remédios orais.
+
+---
+
+## 3. DIAGNÓSTICO E RASTREAMENTO
+
+### Critérios Diagnósticos (ADA/ISPAD/OMS)
+
+| Exame | Normal | Pré‑diabetes | Diabetes |
+|-------|--------|--------------|----------|
+| Glicemia de jejum (8h) | < 100 mg/dL | 100‑125 mg/dL | ≥ 126 mg/dL (duas ocasiões) |
+| Glicemia casual | – | – | ≥ 200 mg/dL + sintomas |
+| TOTG 75g (2h) | < 140 mg/dL | 140‑199 mg/dL | ≥ 200 mg/dL |
+| HbA1c | < 5,7% | 5,7‑6,4% | ≥ 6,5% (método NGSP) |
+
+### Rastreamento para parentes de primeiro grau (SBD 2025)
+- Início: a partir dos 2 anos.
+- Autoanticorpos: anti‑GAD, anti‑IA2, anti‑insulina, anti‑ZnT8.
+- Repetir entre 6‑8 anos e 10‑15 anos.
+- Positividade → estadiamento (Estágio 1,2,3) e seguimento periódico (a cada 6‑12 meses).
+
+### Diagnóstico diferencial DM1 vs DM2 (exames complementares)
+- Peptídeo C (normal ou baixo): < 0,2 nmol/L sugere DM1.
+- Autoanticorpos: positivos em 85‑90% dos DM1.
+
+### Explicação Simplificada
+O diagnóstico é feito com exame de sangue simples. Se a glicemia em jejum for ≥126 mg/dL em dois dias diferentes, ou se houver sintomas (urinar muito, sede, emagrecimento) com glicemia ≥200 mg/dL, o diagnóstico está confirmado. Exames de anticorpos e peptídeo C ajudam a diferenciar do tipo 2.
+
+---
+
+## 4. INSULINOTERAPIA COMPLETA
+
+### Princípios Gerais
+- Reposição de insulina exógena para mimetizar a secreção fisiológica.
+- Esquema basal‑bolus (melhor controle e flexibilidade).
+- Dose total diária (DTD) inicial:
+  - Diagnóstico recente (lua de mel): 0,5‑0,8 U/kg/dia.
+  - Após remissão parcial: 0,7‑1,0 U/kg/dia.
+  - Puberdade: 1,0‑2,0 U/kg/dia (pode chegar a 2,5 U/kg/dia em alguns casos).
+- Distribuição típica: 40‑50% basal (insulina de ação prolongada) e 50‑60% bolus (insulina rápida/ultrarrápida).
+
+### Cálculo de Bolus
+- **Bolus prandial:** quantidade de carboidratos (g) ÷ relação insulina:carboidrato (R I:C).
+  - R I:C inicial pela “regra de 500”: 500 ÷ DTD = g cobertos por 1U.
+  - Ajuste individual (crianças menores podem precisar de 1U para 5‑10g; adolescentes 1U para 10‑20g).
+- **Bolus de correção:** (glicemia atual – glicemia alvo) ÷ fator de sensibilidade (ISF).
+  - Regra de 1800 (mg/dL): 1800 ÷ DTD = queda da glicemia (mg/dL) por 1U de insulina.
+  - Regra de 100 (mmol/L): 100 ÷ DTD.
+
+### Esquemas comuns
+1. **Múltiplas injeções diárias (MDI):**
+   - Basal: glargina (1x/dia) ou detemir (1‑2x/dia) ou degludeca (1x/dia, horário flexível).
+   - Bolus: análogo rápido/ultrarrápido antes das principais refeições.
+2. **Bomba de insulina (CSII):** infusão contínua de insulina rápida/ultrarrápida com taxas basais programáveis e bolus comandados pelo usuário.
+3. **Sistemas automatizados (AID):** bomba + CGM + algoritmo que ajusta a insulina automaticamente.
+
+### Ajustes de dose
+- Baseados em padrões de glicemia (SMBG ou CGM) e HbA1c.
+- Aumentar basal se glicemia de jejum persistentemente acima da meta.
+- Aumentar bolus prandial se pós‑prandial > 180 mg/dL.
+- Reduzir dose basal (10‑20%) se hipoglicemia noturna ou entre refeições.
+
+---
+
+## 5. TIPOS DE INSULINA E PERFIS
+
+### Tabela resumo (valores típicos)
+
+| Insulina | Início | Pico | Duração | Características |
+|----------|--------|------|---------|-----------------|
+| Regular | 30‑60 min | 2‑4 h | 5‑8 h | Humana; aplicar 30 min antes das refeições |
+| Lispro / Aspart / Glulisina | 5‑15 min | 1‑3 h | 3‑5 h | Análogos rápidos; aplicar imediatamente antes das refeições |
+| Faster‑aspart / Ultra‑rápida lispro | 5‑20 min | 1,5‑2,2 h | 5‑7 h | Excipientes aceleradores; ideal para bombas e AID |
+| NPH | 2‑4 h | 4‑10 h | 12‑20 h | Intermediária; pico pronunciado; risco de hipoglicemia noturna |
+| Glargina U100 | 2‑4 h | sem pico | ~24 h | Análogo basal; aplicar 1x/dia no mesmo horário |
+| Glargina U300 | 2‑6 h | sem pico | 30‑36 h | Mais concentrada; duração mais prolongada; aprovada ≥6 anos |
+| Detemir | 1‑2 h | sem pico | 20‑24 h | Análogo basal; geralmente 2x/dia |
+| Degludeca | 30‑90 min | sem pico | >42 h | Ultra‑longa; flexibilidade de horário (intervalo ≥8h); aprovada ≥1 ano |
+
+### Observações importantes
+- NPH deve ser homogeneizada rolamento suave (não agitar) 12‑15 vezes antes de aspirar.
+- Glargina e detemir **não devem ser misturadas** com outra insulina na mesma seringa.
+- Degludeca permite ajuste de dose a cada 3‑4 dias (meia‑vida de 25h).
+- Análogos basais modernos (glargina U300, degludeca) reduzem hipoglicemia noturna comparados à NPH.
+
+---
+
+## 6. ARMAZENAMENTO E VALIDADE
+
+### Antes de abrir
+- Refrigeração: entre +2°C e +8°C (porta da geladeira ou parte inferior).
+- Nunca congelar (insulina congelada perde potência).
+- Validade: conforme data de fabricação (geralmente 2‑3 anos).
+
+### Depois de aberto (frasco ou refil em uso)
+- Temperatura ambiente (15‑30°C) por até 4 semanas (verificar fabricante).
+- Pode permanecer na geladeira, mas não é obrigatório.
+- Proteger da luz solar direta e calor extremo.
+- Descartar após 30 dias (ou conforme orientação).
+
+### Em uso em bomba de insulina
+- Reservatório deve ser trocado a cada 48‑72 horas (exceto conjuntos estendidos de 7 dias).
+- Nunca deixar a bomba exposta a temperaturas >37°C (carro ao sol, sauna).
+
+### Durante viagens
+- Transportar na bagagem de mão (nunca despachar).
+- Bolsa térmica isolante, mas sem contato direto com gelo (pode congelar).
+- Em voos, manter na cabine.
+
+### Indicadores de insulina deteriorada
+- NPH: grumos, depósitos fixos, não uniformiza mesmo após rolamento.
+- Insulinas claras (regular, glargina, aspart, lispro): turvação, partículas, descoloração.
+
+---
+
+## 7. ROTAÇÃO DOS LOCAIS DE APLICAÇÃO
+
+### Áreas permitidas
+- Abdômen (região periumbilical, exceto 2 cm ao redor do umbigo).
+- Coxas (terço médio anterior e lateral).
+- Braços (terço médio posterior e lateral).
+- Nádegas (quadrantes superiores externos).
+
+### Técnica de rotação
+- Dividir cada região em quadrantes (ex.: “relógio” ao redor do umbigo).
+- Manter distância mínima de 1 cm entre injeções.
+- Usar uma região por 1‑2 semanas, depois mudar.
+- Registrar locais usados (aplicativos, desenho, calendário).
+
+### Consequências da falta de rotação
+- **Lipo‑hipertrofia:** acúmulo de gordura subcutânea → absorção errática da insulina → pior controle glicêmico.
+- **Lipoatrofia:** depressão da pele (raro com insulinas atuais).
+- Dor e sangramento desnecessários.
+
+### Como identificar e manejar lipo‑hipertrofia
+- Palpar a pele: áreas endurecidas, nodulares, “borrachudas”.
+- Suspender aplicação na área afetada imediatamente.
+- Reduzir dose de insulina (pode ser >20%) ao mudar para tecido saudável.
+- A lesão pode levar semanas a meses para regredir.
+
+---
+
+## 8. MEDIÇÃO DA GLICEMIA (SMBG)
+
+### Frequência ideal (sem CGM)
+- **Mínimo:** 4 vezes/dia (jejum, pré‑almoço, pré‑jantar, deitar).
+- **Recomendado:** 6‑10 vezes/dia (incluir pós‑prandiais, madrugada, antes/depois de exercício, durante doença).
+- Crianças pequenas podem precisar de 8‑12 medições/dia devido à maior variabilidade.
+
+### Passo a passo correto
+1. Lavar mãos com água e sabão (resíduos de alimentos alteram resultado). Secar bem.
+2. Inserir tira no glicosímetro (código automático ou manual).
+3. Picar a **lateral** da ponta do dedo (evitar centro).
+4. Formar gota de sangue (não espremer muito).
+5. Encostar a tira na gota (suga automaticamente).
+6. Aguardar resultado (5‑10 segundos).
+7. Registrar valor + horário + observações (alimentação, insulina, atividade, sintomas).
+
+### Cuidados com glicosímetros
+- Usar tiras dentro da validade e armazenadas adequadamente (frasco fechado).
+- Calibrar conforme instrução do fabricante (quando necessário).
+- Testar com solução controle periodicamente.
+- Higienizar aparelho (não molhar).
+
+### Erros comuns
+- Não lavar as mãos (falsa hiperglicemia por contato com açúcar).
+- Tiras vencidas ou armazenadas em local úmido/calor.
+- Usar lanceta repetidas vezes (aumenta dor e risco de infecção).
+- Não anotar resultados – perde‑se oportunidade de ajuste.
+
+---
+
+## 9. MONITORIZAÇÃO CONTÍNUA DA GLICOSE (CGM)
+
+### Tipos de CGM
+| Tipo | Funcionamento | Alarmes | Aplicação |
+|------|---------------|---------|-----------|
+| isCGM (Flash) – 1ª geração | Escaneia para ver glicose | Não | FSL 1 |
+| isCGM – 2ª geração | Escaneia + alarmes opcionais | Sim | FSL 2, FSL 3 |
+| rtCGM (tempo real) | Transmissão contínua automática | Sim | Dexcom G6/G7, Medtronic Guardian, Simplera |
+
+### Precisão (MARD – valores pediátricos)
+- FreeStyle Libre 2: ~9,7%
+- FreeStyle Libre 3: ~8,6%
+- Dexcom G6: 7,7‑10,1%
+- Dexcom G7: ~8,1‑9,0%
+- Medtronic Guardian 4: ~11,6%
+
+### Metas de controle baseadas em CGM (ISPAD/ADA 2024)
+- **TIR (70‑180 mg/dL):** > 70% (> 16h 48min/dia)
+- **TBR (< 70 mg/dL):** < 4% (< 58 min/dia)
+- **TBR grave (< 54 mg/dL):** < 1% (< 15 min/dia)
+- **TAR (> 180 mg/dL):** < 25% (< 6h/dia)
+- **TAR grave (> 250 mg/dL):** < 5% (< 1h 12min/dia)
+- **Coeficiente de variação (CV):** < 36%
+
+### Vantagens documentadas
+- Redução de HbA1c (0,3‑0,6% em relação ao SMBG).
+- Redução de hipoglicemia grave (especialmente noturna).
+- Melhora da qualidade de vida e redução do medo de hipoglicemia.
+- Permite ajustes proativos (setas de tendência).
+
+### Cuidados com o sensor
+- Aplicar em pele limpa e seca.
+- Rodízio de locais (evitar mesma área do cateter de bomba).
+- Adesivos extras podem ser usados se houver descolamento.
+- Em caso de reação cutânea (dermatite): tentar barreira (spray de barreira, adesivo hipoalergênico), se persistir, consultar dermatologista.
+- Não confiar cegamente – confirmar com glicosímetro se houver suspeita de leitura incorreta ou durante variações rápidas de glicemia.
+
+### Aprovação etária (exemplos)
+- FreeStyle Libre 3: ≥4 anos (na Europa; nos EUA ≥18 anos para não adjunto, mas usado off‑label em crianças).
+- Dexcom G7: ≥2 anos.
+- Medtronic Guardian 4: ≥7 anos.
+
+---
+
+## 10. HIPOGLICEMIA – RECONHECIMENTO E TRATAMENTO
+
+### Definições (ADA/ISPAD)
+- **Alerta de hipoglicemia:** < 70 mg/dL – requer carboidrato para evitar queda maior.
+- **Hipoglicemia clinicamente importante:** < 54 mg/dL – risco de disfunção cognitiva e convulsão.
+- **Hipoglicemia grave:** qualquer valor com necessidade de assistência de terceiros (administração de glucagon ou glicose IV).
+
+### Sintomas
+| Adrenérgicos (leves) | Neuroglicopênicos (moderados) | Graves |
+|----------------------|-------------------------------|---------|
+| Tremor, palpitação | Sonolência, confusão | Desmaio |
+| Sudorese, pele fria | Visão turva | Convulsão |
+| Fome intensa | Tontura, dor de cabeça | Incapacidade de engolir |
+| Ansiedade, irritabilidade | Dificuldade de concentração | |
+
+### Tratamento (Regra 15‑15)
+1. **Confirmar** com medição (se possível).
+2. **Administrar 15g de carboidrato de ação rápida** (lista abaixo).
+3. **Aguardar 15 minutos**.
+4. **Reavaliar** – se ainda < 70 mg/dL, repetir.
+5. **Após normalizar** (>70 mg/dL), oferecer **lanche com carboidrato de absorção lenta** (pão, leite, fruta) para evitar recorrência.
+
+### Exemplos de 15g de carboidrato rápido
+- 3 balas (tipo Soft, não diet)
+- 1/2 copo de suco de laranja (100 mL)
+- 1/2 latinha de refrigerante comum (150 mL)
+- 1 colher de sopa de açúcar dissolvida em água
+- 1 tablete de glicose (tamanho padrão)
+- 1 colher de sopa de mel
+
+### Tratamento da hipoglicemia grave (inconsciente ou convulsão)
+1. **Não** tentar dar nada pela boca.
+2. Posicionar a criança de lado (posição lateral de segurança).
+3. **Administrar glucagon:**
+   - Glucagon nasal: 3 mg em uma narina (≥4 anos).
+   - Glucagon injetável: 1 mg IM/SC (>25 kg) ou 0,5 mg (<25 kg).
+4. **Chamar serviço de emergência (192)**.
+5. Se não houver glucagon ou se não responder em 10‑15 min, levar ao hospital imediatamente.
+
+### Prevenção
+- Revisar doses de insulina (principalmente basal noturna).
+- Nunca pular refeições ou lanches programados.
+- Ajustar insulina para exercício físico.
+- Usar CGM com alarmes e sistemas de suspensão preditiva.
+- Educar família, escola, cuidadores.
+
+### Perguntas frequentes
+**P:** Criança com hipoglicemia leve pode continuar a atividade?  
+**R:** Não. Tratar imediatamente. Mesmo assintomática, glicemia <70 mg/dL exige carboidrato.
+
+**P:** O glucagon tem efeitos colaterais?  
+**R:** Sim, náuseas e vômitos são comuns após recuperação da consciência. Monitorar.
+
+**P:** Posso usar mel ou chocolate?  
+**R:** Mel sim (1 colher), mas chocolate tem gordura e retarda absorção – não é primeira escolha.
+
+---
+
+## 11. HIPERGLICEMIA E CETOACIDOSE (CAD)
+
+### Hiperglicemia – definição
+- Pós‑prandial > 180 mg/dL.
+- Nível 1: >180 mg/dL; Nível 2: >250 mg/dL.
+
+### Causas comuns
+- Dose insuficiente de insulina (basal ou prandial).
+- Omissão de dose.
+- Ingestão excessiva de carboidratos sem correção.
+- Doença infecciosa, febre.
+- Estresse físico ou emocional.
+- Fenômeno do amanhecer (aumento matinal fisiológico).
+- Falta de atividade física.
+
+### Conduta inicial (sem cetose)
+- Administrar insulina de correção (seguir fator de sensibilidade).
+- Incentivar hidratação com água.
+- Investigar causa (insulina vencida? cateter obstruído? doença?).
+- Monitorar glicemia a cada 2‑4 horas.
+
+### Cetoacidose diabética (CAD) – critérios
+- Glicemia ≥ 200 mg/dL.
+- pH venoso ≤ 7,30 ou bicarbonato ≤ 15 mEq/L.
+- Cetonemia (β‑hidroxibutirato) ≥ 3 mmol/L ou cetonúria ≥ 2+.
+
+### Classificação da gravidade
+| Parâmetro | Leve | Moderada | Grave |
+|-----------|------|----------|-------|
+| pH | 7,20‑7,30 | 7,10‑7,19 | <7,10 |
+| Bicarbonato | 10‑15 mEq/L | 5‑9 mEq/L | <5 mEq/L |
+| Estado mental | Alerta | Sonolento | Coma/convulsão |
+
+### Sintomas de CAD
+- Poliúria, polidipsia intensas.
+- Náuseas, vômitos, dor abdominal.
+- Respiração de Kussmaul (profunda e rápida).
+- Hálito cetônico (cheiro de fruta podre ou removedor de esmalte).
+- Desidratação (olhos encovados, pele seca, mucosas secas).
+- Sonolência, confusão, torpor, coma.
+
+### Conduta na CAD (emergência)
+- **NÃO** tratar em casa.
+- **Internação imediata** (preferencialmente UTI pediátrica).
+- Hidratação venosa com solução salina isotônica.
+- Reposição de potássio e outros eletrólitos.
+- Insulina regular endovenosa em bomba de infusão contínua (0,05‑0,1 U/kg/h).
+- Monitorização frequente de glicemia, eletrólitos, cetonas, equilíbrio ácido‑base.
+- **Evitar** bicarbonato de rotina (risco de edema cerebral).
+- **Evitar** insulina SC em CAD grave (absorção imprevisível).
+
+### Prevenção da CAD
+- Educação sobre “dias de doença” – nunca suspender insulina basal.
+- Monitorar cetonas durante febre ou vômitos.
+- Ajustar doses conforme orientação médica.
+
+---
+
+## 12. ALIMENTAÇÃO E CONTAGEM DE CARBOIDRATOS
+
+### Princípios gerais (SBD, ADA)
+- **Contagem de carboidratos** é a principal ferramenta para ajuste de insulina prandial.
+- Distribuição: 50‑55% carboidratos, 15‑20% proteínas, 25‑30% gorduras (saturadas <7%).
+- Fibras: 20‑35 g/dia.
+- Fracionamento: 5‑6 refeições/dia (3 principais + 2‑3 lanches).
+
+### Como contar carboidratos – passo a passo para pais
+1. **Aprenda quais alimentos têm carboidrato:**
+   - **Sim:** pães, arroz, macarrão, biscoitos, batata, mandioca, feijão, lentilha, frutas, sucos, leite, iogurte, açúcar, mel, doces, bolos, refrigerantes comuns.
+   - **Não precisam contar (mas têm calorias):** carnes, ovos, queijos, óleos, manteiga, azeite, verduras e legumes (exceto milho, ervilha, beterraba).
+2. **Use medidas caseiras para estimar (tabela de equivalência):**
+   - 1 colher de sopa de arroz ≈ 15g carboidrato.
+   - 1 pão francês ≈ 28g carboidrato.
+   - 1 maçã pequena ≈ 15g carboidrato.
+   - 1 copo (200 mL) de leite ≈ 12g carboidrato.
+   - 1 fatia de bolo simples ≈ 20‑25g carboidrato.
+3. **Calcule a dose de insulina prandial:**
+   - Relação insulina:carboidrato (I:C) – exemplo: 1U para 15g.
+   - Dose = total carboidratos ÷ I:C.
+4. **Adicione a correção** se glicemia pré‑prandial > meta.
+
+### Exemplo prático
+| Refeição | Alimento | Quantidade | Carboidratos (g) |
+|----------|----------|------------|------------------|
+| Café da manhã | Pão francês | 1 unidade | 28 |
+| | Leite com café | 200 mL | 12 |
+| | Mamão papaia | ½ unidade | 13 |
+| **Total** | | | **53 g** |
+| Relação I:C = 1U/15g | Dose = 53 ÷ 15 ≈ 3,5 U | | |
+
+### Alimentos com alto teor de gordura + carboidrato (pizza, lasanha, hambúrguer)
+- A gordura retarda a absorção – usar **bolus estendido** (combo bolus) em bomba, ou, em MDI, dividir a dose (60% antes, 40% após 1‑2h).
+
+### Adoçantes permitidos
+- Não calóricos: aspartame, sacarina, ciclamato, esteviosídeo, acessulfame‑K, sucralose.
+- Calóricos (com moderação): frutose, sorbitol, xilitol.
+
+### Erros comuns
+- Acreditar que alimentos diet/light são “zero carboidratos” (leia rótulos).
+- Não contar carboidratos de frutas e leite.
+- Ignorar o efeito das gorduras e proteínas no pós‑prandial tardio.
+- Não ajustar a relação I:C ao longo do dia (geralmente mais insulina pela manhã).
+
+---
+
+## 13. ATIVIDADE FÍSICA E EXERCÍCIO
+
+### Recomendações (ISPAD, ADA)
+- Crianças e adolescentes: ≥60 minutos/dia de atividade moderada a vigorosa.
+- Exercícios aeróbicos (corrida, natação, bicicleta, dança) + resistidos (musculação) 2‑3x/semana.
+
+### Efeitos no metabolismo
+- Aumenta sensibilidade à insulina por até 24h.
+- Risco de hipoglicemia **durante**, **imediatamente após** e **até 11h após** o exercício (principalmente à noite).
+- Exercícios de alta intensidade podem **aumentar** a glicemia transitoriamente (liberação de hormônios contrarreguladores).
+
+### Conduta antes do exercício
+| Glicemia pré‑exercício | Conduta |
+|------------------------|---------|
+| < 90 mg/dL | Consumir 15‑30g de carboidrato rápido antes de começar |
+| 90‑150 mg/dL | Pode iniciar; ter carboidrato disponível |
+| 150‑250 mg/dL | Iniciar normalmente |
+| > 250 mg/dL | Verificar cetonas. Se positivas, **não** exercitar (risco de agravar cetose). |
+
+### Durante o exercício prolongado (>30 min)
+- Consumir 15‑30g de carboidrato a cada 30‑45 min (dependendo da intensidade).
+- Hidratar‑se com água.
+
+### Após o exercício
+- Reduzir insulina basal (10‑30%) na noite seguinte – consultar equipe.
+- Oferecer lanche com carboidrato de absorção lenta ao deitar (ex.: 200 mL de leite + 1 biscoito).
+- Monitorar glicemia noturna (CGM com alarmes ou medição às 2‑3h).
+
+### Ajustes para usuários de bomba ou AID
+- Suspender ou reduzir taxa basal temporária (30‑50%) 1‑2h antes do exercício.
+- Em sistemas AID, ativar “modo exercício” ou “meta temporária mais alta”.
+
+### Erros comuns
+- Exercitar com cetonúria positiva (> 1,5 mmol/L) – pode precipitar CAD.
+- Não reduzir insulina noturna após exercício intenso (hipoglicemia tardia).
+- Não monitorar glicemia durante exercício prolongado (treinos, jogos, acampamentos).
+
+---
+
+## 14. DIAS DE DOENÇA (REGRAS DE MANEJO)
+
+### Regra de ouro: NUNCA SUSPENDER A INSULINA BASAL
+Mesmo que a criança não esteja comendo, o corpo precisa de insulina para evitar cetose.
+
+### Passo a passo (protocolo para família)
+1. **Medir glicemia a cada 2‑4 horas** (ou usar CGM com alarmes).
+2. **Medir cetonas no sangue (β‑hidroxibutirato) ou urina a cada 4‑6 horas**.
+3. **Insulina basal:** manter dose habitual. Reduzir 10‑20% apenas se glicemia < 70 mg/dL e hipoglicemia recorrente (orientação médica).
+4. **Insulina prandial (rápida):** se a criança não se alimentar, aplicar **50% da dose habitual** para prevenir cetose.
+5. **Hidratação:**
+   - Se não está vomitando: água, chá sem açúcar, soro caseiro.
+   - Evitar sucos e refrigerantes (carboidratos desnecessários).
+   - Se vomitar: parar via oral por 1h, depois oferecer pequenos goles a cada 10 min.
+6. **Se vômitos repetidos** (≥3 episódios em 6h) ou impossibilidade de hidratar → **procurar pronto‑socorro** (pode necessitar hidratação venosa).
+
+### Quando ir ao hospital (sinais de alerta)
+- Vômitos incoercíveis (não consegue reter líquidos).
+- Glicemia > 250 mg/dL com cetonas moderadas/altas que não melhoram após insulina extra.
+- Sonolência, confusão, respiração rápida e profunda (suspeita de CAD).
+- Desidratação grave (olhos encovados, choro sem lágrimas, boca seca, prega cutânea).
+
+### Tabela de ação rápida para pais (imprimir)
+| Situação | Ação |
+|----------|------|
+| Glicemia 150‑250, cetonas negativas, criança se alimenta | Dose normal de insulina, hidratação |
+| Glicemia > 250, cetonas leves (+) | Insulina extra (10‑20% DTD), hidratação, repetir em 2h |
+| Glicemia > 250, cetonas moderadas (++), sem vômitos | Insulina extra, hidratação, contatar equipe |
+| Glicemia > 250, cetonas +++ ou vômitos | **Ir ao hospital imediatamente** |
+
+---
+
+## 15. CUIDADOS NA ESCOLA
+
+### Direitos e deveres (baseado em posicionamentos da ADA e legislação brasileira)
+- A criança com DM1 tem direito a:
+  - Medir glicemia sempre que necessário (em sala de aula ou local reservado).
+  - Administrar insulina (ou receber auxílio) nos horários programados.
+  - Ter lanches extras e acesso à água.
+  - Participar de todas as atividades, incluindo educação física e excursões.
+  - Ter um plano de manejo individualizado e funcionários treinados.
+
+### Plano de manejo escolar – o que deve conter
+1. Identificação da criança, contatos de emergência (pais, médico).
+2. Descrição do DM1 e das necessidades (monitorização, insulina, alimentação).
+3. Metas glicêmicas e horários de medição.
+4. Reconhecimento e tratamento da hipoglicemia (passo a passo).
+5. Autorização para administração de glucagon.
+6. Kit de emergência (glicosímetro, tiras, lancetas, glicose de ação rápida, glucagon).
+7. Telefones de contato (pais, médico, hospital).
+
+### Treinamento da equipe escolar (mínimo 2 funcionários)
+- Reconhecer sintomas de hipoglicemia.
+- Medir glicemia capilar (treinamento prático).
+- Administrar carboidrato rápido (suco, balas) em hipoglicemia leve/moderada.
+- Administrar glucagon (nasal ou injetável) em hipoglicemia grave.
+- Saber quando chamar emergência (192) e contatar os pais.
+
+### Comunicação família‑escola
+- Caderno de comunicação diária (glicemias, doses, intercorrências) ou aplicativo.
+- Reuniões periódicas (início do ano letivo, após diagnóstico, após mudança de tratamento).
+
+### O que fazer em caso de recusa da escola
+- Apresentar laudo médico e plano de manejo.
+- Solicitar reunião com direção e secretaria de educação.
+- Acionar conselho tutelar ou defensoria pública se houver discriminação.
+
+---
+
+## 16. CUIDADOS EM VIAGENS
+
+### Planejamento pré‑viagem
+- Consultar equipe de diabetes pelo menos 2‑4 semanas antes.
+- Solicitar carta médica em português, inglês (e idioma do destino) contendo:
+  - Diagnóstico, tratamento, medicamentos (insulina, glucagon).
+  - Necessidade de seringas/agulhas, glicosímetro, CGM.
+  - Alergias.
+- Levar receitas (insulina, glucagon, outros medicamentos).
+
+### Suprimentos (levar o DOBRO do estimado)
+- Insulina (frasco/refil/caneta) – quantidade para todo o período + reserva.
+- Seringas (quantidade suficiente).
+- Glicosímetro + tiras (2x o necessário).
+- Lancetas, algodão, álcool 70%.
+- Glucagon (nasal ou injetável).
+- Lanches de emergência (balas, suco, biscoitos).
+- Baterias sobressalentes (para glicosímetro, bomba, leitor CGM).
+- Cabos de carregamento, adaptadores de tomada.
+
+### Transporte de insulina e suprimentos
+- **Sempre na bagagem de mão** (nunca despachar – risco de congelamento, perda).
+- Bolsa térmica isolante (sem contato direto com gelo).
+- Em voos, informar à companhia aérea sobre a necessidade de manter insulina na cabine (permitido).
+
+### Ajustes para fusos horários (viagens longas)
+- Manter horário original para insulina basal por 1‑2 dias e ajustar gradualmente.
+- Para degludeca (meia‑vida longa): pode manter mesmo horário local (flexível).
+- Para glargina/detemir: deslocar a dose uma hora por dia até atingir o novo horário.
+- Usar CGM para monitorar padrões e ajustar.
+
+### Durante a viagem
+- Manter rotina de medições (ou CGM contínuo).
+- Ter sempre carboidrato rápido à mão.
+- Identificar farmácias e hospitais no destino.
+- Levar documento com contato da equipe de diabetes (por e‑mail ou telefone internacional).
+
+---
+
+## 17. TECNOLOGIAS APLICADAS (BOMBAS E SISTEMAS AID)
+
+### Bomba de insulina (CSII)
+**Indicações preferenciais (ISPAD):**
+- Crianças <7 anos (reduz hipoglicemia, melhora qualidade de vida).
+- Hipoglicemia grave recorrente.
+- Grande variabilidade glicêmica.
+- Desejo de maior flexibilidade.
+
+**Componentes:**
+- Reservatório (3 mL) preenchido com insulina rápida/ultrarrápida.
+- Conjunto de infusão (cateter + cânula).
+- Controlador (integrado ou separado).
+- Taxas basais programáveis (até 48 perfis/dia).
+
+**Cuidados:**
+- Trocar conjunto a cada 48‑72 horas (ou conforme fabricante).
+- Verificar permeabilidade (se glicemia inexplicavelmente alta, trocar cateter imediatamente).
+- Nunca ficar sem insulina de reserva (seringas/canetas para emergência).
+
+### Sistemas de suspensão preditiva (PLGS)
+- Ex.: Medtronic SmartGuard, Tandem Basal‑IQ.
+- Suspende a insulina quando o sensor prevê hipoglicemia nos próximos 30 min.
+- Reduz tempo em hipoglicemia em 30‑50% sem piorar HbA1c.
+
+### Sistemas híbridos de alça fechada (AID – “pâncreas artificial”)
+- Ex.: Medtronic 780G, Tandem Control‑IQ, CamAPS FX, Omnipod 5.
+- Integram bomba + CGM + algoritmo.
+- Ajustam insulina automaticamente (basal e bolus de correção) – usuário ainda anuncia refeições.
+- Benefícios: aumento de TIR (10‑15%), redução de hipoglicemia grave, melhora do controle noturno.
+- Aprovados a partir de 1‑7 anos dependendo do sistema.
+
+### Disponibilidade no SUS
+- Bombas de insulina e sensores **não são incorporados** nacionalmente (Portaria nº 38/SCTIE/MS de 2018).
+- Alguns estados/municípios possuem programas próprios.
+- Na rede privada ou via judicial é possível obter.
+
+### Dicas para famílias que usam tecnologia
+- Treinamento completo antes do uso.
+- Baixar dados regularmente e revisar com a equipe.
+- Ter plano de contingência para falha do dispositivo (voltar a MDI e SMBG).
+- Rotacionar locais de infusão e sensor.
+
+---
+
+## 18. SAÚDE MENTAL DA CRIANÇA E FAMÍLIA
+
+### Problemas comuns
+- **Medo de hipoglicemia (FOH):** presente em 20‑30% dos pais; leva a glicemias cronicamente elevadas, redução da qualidade de vida.
+- **Depressão e ansiedade:** prevalência 2‑3x maior em adolescentes com DM1.
+- **Estresse parental e burnout:** mães de crianças pequenas com DM1 têm níveis elevados de estresse.
+- **Distúrbios alimentares:** omissão de insulina para perda de peso (risco de CAD recorrente).
+- **Não adesão:** comum na adolescência, relacionada a conflitos familiares e desejo de autonomia.
+
+### Rastreamento recomendado
+- Questionário Clarke ou Gold para avaliar percepção de hipoglicemia.
+- Hypoglycemia Fear Survey (HFS) para pais e crianças.
+- Escalas de depressão (PHQ‑9, CDI) e ansiedade (SCARED) anualmente.
+- Perguntar abertamente sobre pensamentos de automutilação ou suicídio (especialmente em adolescentes).
+
+### Intervenções eficazes
+- Psicoeducação estruturada.
+- Terapia cognitivo‑comportamental (TCC) – reduz HbA1c e melhora adesão.
+- Terapia familiar comportamental (BFST) – reduz conflitos.
+- Suporte por pares (grupos de pais, acampamentos).
+
+### Quando encaminhar ao psicólogo/psiquiatra
+- Sintomas depressivos persistentes (>2 semanas).
+- Ansiedade grave interferindo nas atividades diárias.
+- Distúrbio alimentar suspeito (omissão de insulina, compulsão alimentar, purgação).
+- Não adesão grave com hospitalizações recorrentes.
+- Ideação suicida.
+
+### Orientações para pais
+- Normalizar o luto e a adaptação – é normal sentir raiva, tristeza, medo.
+- Cuidar da própria saúde mental – pais estressados têm filhos com pior controle.
+- Buscar apoio em associações de diabetes.
+- Envolver a criança nas decisões do tratamento (progressivamente, conforme idade).
+
+---
+
+## 19. COMPLICAÇÕES CRÔNICAS E RASTREAMENTO
+
+### Retinopatia diabética
+- **Rastreamento:** exame de fundo de olho (oftalmoscopia indireta com dilatação).
+- **Início:** DM2 ao diagnóstico; DM1 após 5 anos de doença (ou puberdade).
+- **Frequência:** anual.
+- **Controle:** otimizar glicemia e pressão arterial.
+
+### Nefropatia diabética
+- **Rastreamento:** microalbuminúria (relação albumina/creatinina em amostra isolada) e creatinina sérica (TFGe).
+- **Início:** DM2 ao diagnóstico; DM1 após 5 anos de doença.
+- **Frequência:** anual.
+- **Tratamento:** IECA ou BRA (exceto na gravidez), controle pressórico (<130/80 mmHg), restrição proteica (0,8 g/kg/dia) se proteinúria estabelecida.
+
+### Neuropatia periférica
+- **Rastreamento:** exame dos pés anualmente – monofilamento de 10g, diapasão 128 Hz, sensibilidade tátil/dolorosa/térmica, reflexo aquileu.
+- **Prevenção:** controle glicêmico rigoroso.
+- **Tratamento sintomático:** amitriptilina (25‑150 mg/dia), gabapentina (900‑1800 mg/dia), pregabalina (75‑300 mg/dia).
+
+### Dislipidemia
+- **Rastreamento:** perfil lipídico (LDL, HDL, triglicerídeos) ao diagnóstico e anualmente.
+- **Metas:** LDL < 100 mg/dL (<70 mg/dL se risco cardiovascular elevado); HDL > 40 mg/dL (homens) >50 mg/dL (mulheres); triglicerídeos < 150 mg/dL.
+- **Tratamento:** mudança de estilo de vida + estatina (atorvastatina/sinvastatina) a partir dos 10 anos se LDL > 160 mg/dL ou >130 mg/dL com fatores de risco.
+
+### Hipertensão arterial
+- **Rastreamento:** medir PA em todas as consultas.
+- **Metas:** < 90º percentil para idade, sexo e altura; < 130/80 mmHg para adolescentes.
+- **Tratamento:** IECA ou BRA.
+
+### Doença celíaca e tireoidite autoimune
+- **Rastreamento:** transglutaminase IgA (celíaca) e TSH + anticorpos anti‑TPO (tireoide) ao diagnóstico e a cada 1‑2 anos.
+- **Prevalência:** 5‑10% para celíaca; 15‑30% para tireoidite.
+
+---
+
+## 20. PRIMEIROS DIAS APÓS O DIAGNÓSTICO
+
+### Objetivos da primeira semana
+1. Estabilizar a criança (corrigir desidratação, hiperglicemia, cetose).
+2. Ensinar habilidades de “sobrevivência” aos pais:
+   - O que é DM1.
+   - Como aplicar insulina (técnica, rodízio, doses).
+   - Como medir glicemia.
+   - Como reconhecer e tratar hipoglicemia.
+3. Estabelecer regime insulínico (geralmente 2‑3 injeções/dia inicialmente).
+4. Agendar retorno ambulatorial (1‑2 semanas).
+
+### Plano de alta hospitalar (checklist para família)
+- [ ] Sei aplicar insulina em seringa/caneta.
+- [ ] Sei medir glicemia capilar.
+- [ ] Sei reconhecer sintomas de hipoglicemia e hiperglicemia.
+- [ ] Tenho glucagon em casa e sei administrar.
+- [ ] Tenho números de contato da equipe (24h).
+- [ ] Agendei primeira consulta de acompanhamento.
+- [ ] Recebi receitas de insulina, glicosímetro, tiras, lancetas, seringas.
+- [ ] Sei como armazenar insulina.
+- [ ] Sei como fazer o rodízio de locais de aplicação.
+
+### Apoio emocional
+- Reações normais: choque, negação, raiva, tristeza, culpa.
+- Buscar apoio psicológico precoce (para pais e criança).
+- Participar de grupos de pais (presencial ou online).
+- Não se cobrar perfeição nos primeiros dias – o aprendizado é gradual.
+
+### Erros comuns nos primeiros dias
+- Tentar aprender tudo de uma vez → sobrecarga.
+- Não anotar glicemias e doses (dificulta ajustes).
+- Suspender insulina por medo de hipoglicemia.
+- Deixar de contatar a equipe por receio de “incomodar”.
+
+---
+
+## 21. EDUCAÇÃO EM DIABETES PARA FAMILIARES
+
+### Conteúdo programático (curriculum estruturado)
+| Módulo | Tópicos |
+|--------|---------|
+| 1 (diagnóstico) | O que é DM1, insulinoterapia básica, hipoglicemia, SMBG |
+| 2 (1‑4 semanas) | Contagem de carboidratos, ajuste de doses, dias de doença |
+| 3 (1‑3 meses) | Tecnologias (CGM, bomba), exercício, escola, viagens |
+| 4 (semestral) | Complicações crônicas, saúde mental, transição para adolescência |
+
+### Métodos eficazes
+- Ensino individualizado (respeitar ritmo de aprendizado).
+- Simulações práticas (aplicar insulina em laranja, manequim).
+- Material escrito simples (com ilustrações).
+- Vídeos curtos (demonstração de técnicas).
+- Grupos de educação em diabetes (troca de experiências).
+
+### Profissionais envolvidos
+- Médico endocrinologista pediátrico.
+- Enfermeiro educador em diabetes.
+- Nutricionista (ênfase em contagem de carboidratos).
+- Psicólogo.
+- Assistente social (acesso a insumos, escola).
+
+### Avaliação da educação
+- Demonstração prática (aplicação, medição).
+- Questionários orais/escritos (conhecimento).
+- Revisão de registros (glicemias, doses, eventos).
+- Reavaliação periódica (a cada 3‑6 meses).
+
+---
+
+## 22. POLÍTICAS PÚBLICAS E ACESSO A INSUMOS
+
+### O que o SUS oferece (obrigatório)
+- Insulina NPH e regular (farmácia básica).
+- Insulina análoga de ação rápida e prolongada (mediante critérios do PCDT – Portaria nº 17/2019).
+- Glicosímetro e tiras reagentes (para pacientes cadastrados no programa de diabetes).
+- Seringas e lancetas.
+- Acompanhamento multiprofissional em centros de referência.
+
+### Critérios para análogos de insulina no SUS
+1. Uso prévio de NPH+regular por ≥3 meses.
+2. Hipoglicemia grave (necessidade de auxílio de terceiros) ou hipoglicemia não grave repetida (≥2 por semana) ou hipoglicemia noturna repetida ou mau controle persistente (HbA1c fora da meta).
+3. Automonitorização ≥3 vezes/dia.
+4. Acompanhamento regular (≥2 consultas/ano).
+
+### Como conseguir insumos
+1. Cadastrar a criança no sistema HiperDia ou equivalente (Unidade Básica de Saúde).
+2. Obter prescrição médica detalhada (insulina, glicosímetro, tiras, lancetas, seringas).
+3. Retirar na farmácia básica (insulina NPH/regular) ou farmácia de alto custo (análogos, tiras).
+4. Renovar cadastro anualmente (ou conforme orientação local).
+
+### Em caso de negativa de fornecimento
+- Solicitar por escrito o motivo da recusa.
+- Registrar protocolo de atendimento.
+- Procurar ouvidoria do SUS, conselho municipal de saúde.
+- Buscar defensoria pública ou ministério público (ação judicial com pedido de urgência).
+
+### Lei nº 11.347/2006
+- Obriga o SUS a fornecer insulina e insumos para monitoramento da glicemia.
+- Abrange todos os portadores de diabetes (tipo 1 e tipo 2 insulinotratados).
+
+### Metas globais da OMS (Global Diabetes Compact)
+- 100% das pessoas com DM1 têm acesso a insulina e automonitorização acessíveis.
+- 80% têm acesso a educação estruturada em diabetes.
+- Redução de 50% da cetoacidose no diagnóstico.
+
+---
+
+## 23. PLANO DE AÇÃO PARA EMERGÊNCIAS (CARTÃO RESUMO)
+
+**(Imprimir e manter na geladeira, na bolsa da criança, na escola)**
+
+**Dados da criança**  
+Nome: ________________________ Data nasc.: ________________  
+Contato pai/mãe: ________________________  
+Contato médico: ________________________ Hospital referência: ________________________
+
+### Quadro de decisão rápida
+
+| Situação | O que fazer |
+|----------|-------------|
+| **Glicemia < 70 mg/dL, consciente** | Dar 15g de carboidrato rápido (suco, balas, açúcar). Aguardar 15 min. Medir de novo. Se <70, repetir. Depois que normalizar, dar lanche (leite, pão, fruta). |
+| **Glicemia < 54 mg/dL ou criança desmaiada/convulsionando** | **NÃO** dar nada pela boca. Posicionar de lado. Administrar **glucagon** (nasal 3 mg; injetável: 1 mg >25 kg, 0,5 mg <25 kg). Chamar 192. |
+| **Glicemia > 250 mg/dL + cetonas ++/+++ + vômitos** | **IR AO HOSPITAL IMEDIATAMENTE** (suspeita de cetoacidose). Não tentar tratar em casa. |
+| **Febre + vômitos (2x ou mais em 6h)** | Medir glicemia e cetonas. Se glicemia > 250 e cetonas positivas, hospital. Se não, seguir “regras para dias de doença” e contatar equipe. |
+| **Perda de consciência sem causa aparente** | Medir glicemia capilar. Se <70 mg/dL ou impossível medir, administrar glucagon – não causa dano se glicemia normal ou alta. |
+
+### Kit de emergência (sempre disponível)
+- [ ] Glicosímetro + tiras + lancetas
+- [ ] Insulina de ação rápida + seringas/caneta
+- [ ] Glicose de ação rápida (suco de caixinha, balas, gel de glicose)
+- [ ] Lanche de absorção lenta (biscoito, barra de cereal)
+- [ ] Glucagon (nasal ou injetável)
+- [ ] Cópia deste plano + contatos
+
+---
+
+## REFERÊNCIAS PRINCIPAIS (SEM LINKS EXTERNOS)
+
+1. **ISPAD Clinical Practice Consensus Guidelines 2024** – todas as seções (diagnóstico, insulinoterapia, tecnologias, metas glicêmicas, complicações agudas/crônicas, educação, escola, exercício, saúde mental).
+2. **American Diabetes Association. Standards of Care in Diabetes – 2025**. Section 14: Children and Adolescents.
+3. **Sociedade Brasileira de Diabetes. Diretrizes da Sociedade Brasileira de Diabetes 2025**. Capítulos: DM1, rastreamento, insulinoterapia, contagem de carboidratos, tecnologia.
+4. **Ministério da Saúde. Protocolo Clínico e Diretrizes Terapêuticas do Diabete Melito Tipo 1**. Portaria Conjunta SAES/SCTIE nº 17, de 12 de novembro de 2019.
+5. **Lei nº 11.347, de 27 de setembro de 2006** (dispõe sobre o fornecimento de insulina e insumos pelo SUS).
+6. **World Health Organization. Global Diabetes Compact** e metas de cobertura global (2021‑2030).
+
+---
+
+**Fim da Base de Conhecimento – Versão Completa para Integração via API**
