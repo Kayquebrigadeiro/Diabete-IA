@@ -11,6 +11,31 @@ export async function login(email: string, password: string) {
   return data;
 }
 
+export function clearSession() {
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('refresh_token');
+  localStorage.removeItem('user_id');
+  for (let i = 0; i < localStorage.length; i += 1) {
+    const key = localStorage.key(i);
+    if (key?.startsWith('active_child_id:')) {
+      localStorage.removeItem(key);
+      i -= 1;
+    }
+  }
+}
+
+export async function logout() {
+  const token = localStorage.getItem('access_token');
+  if (token) {
+    try {
+      await api.post('/auth/logout', { token });
+    } catch {
+      // Logout deve ser resiliente mesmo se a revogação falhar no backend.
+    }
+  }
+  clearSession();
+}
+
 export async function register(payload: { name: string; email: string; password: string; phone?: string }) {
   const { data } = await api.post('/auth/register', payload);
   return data as User;

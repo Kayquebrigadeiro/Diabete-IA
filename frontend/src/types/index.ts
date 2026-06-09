@@ -35,6 +35,26 @@ export interface MedicationSchedule {
   notes?: string | null;
 }
 
+export interface Appointment {
+  id: UUID;
+  child_id: UUID;
+  professional_name: string;
+  specialty: string;
+  appointment_at: string;
+  status: string;
+  notes?: string | null;
+}
+
+export interface Exam {
+  id: UUID;
+  child_id: UUID;
+  name: string;
+  requested_by?: string | null;
+  requested_at: string;
+  due_at?: string | null;
+  status: string;
+}
+
 export interface Notification {
   id: UUID;
   user_id: UUID;
@@ -73,4 +93,3 @@ export interface ChatAnswer {
   citations: ChatCitation[];
   fallback: boolean;
 }
-

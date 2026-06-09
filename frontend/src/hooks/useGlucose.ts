@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { medicalApi } from '../services/medical';
 
-export function useGlucose() {
+export function useGlucose(childId: string) {
   return useQuery({
-    queryKey: ['glucose'],
-    queryFn: medicalApi.glucose.list,
+    queryKey: ['glucose', childId],
+    queryFn: () => medicalApi.glucose.list(childId),
+    enabled: Boolean(childId),
   });
 }
-

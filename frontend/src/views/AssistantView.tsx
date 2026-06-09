@@ -4,8 +4,11 @@ import { SectionHeader } from '../components/common/SectionHeader';
 import { Button, Card, CardContent, Stack, TextField, Typography } from '@mui/material';
 import { MessageList } from '../components/chat/MessageList';
 import type { ChatAnswer } from '../types';
+import { useActiveChild } from '../hooks/useActiveChild';
 
 export default function AssistantView() {
+  const { activeChild } = useActiveChild();
+  const childLabel = activeChild?.name ?? 'criança ativa';
   const [answer, setAnswer] = useState<ChatAnswer | null>({
     answer: 'Aplique a regra dos 15g de carboidratos rápidos e reavalie em 15 minutos.',
     confidence_score: 0.93,
@@ -17,7 +20,10 @@ export default function AssistantView() {
   return (
     <AppShell title="Assistente IA">
       <Stack spacing={2}>
-        <SectionHeader title="Assistente RAG" subtitle="Respostas com fontes e confiança" />
+        <SectionHeader
+          title={`Assistente de ${childLabel}`}
+          subtitle="Respostas com fontes e confiança para dúvidas do cuidado diário"
+        />
         <Card>
           <CardContent>
             <Stack spacing={2}>
@@ -34,4 +40,3 @@ export default function AssistantView() {
     </AppShell>
   );
 }
-

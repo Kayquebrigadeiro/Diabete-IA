@@ -1,12 +1,16 @@
 import { AppShell } from '../components/layout/AppShell';
 import { SectionHeader } from '../components/common/SectionHeader';
 import { Stack, Card, CardContent, Typography } from '@mui/material';
+import { useActiveChild } from '../hooks/useActiveChild';
 
 export default function LibraryView() {
+  const { activeChild } = useActiveChild();
+  const childLabel = activeChild?.name ?? 'a criança';
+
   return (
     <AppShell title="Biblioteca">
       <Stack spacing={2}>
-        <SectionHeader title="Biblioteca educacional" subtitle="Conteúdo confiável para responsáveis" />
+        <SectionHeader title={`Biblioteca para ${childLabel}`} subtitle="Conteúdo confiável para responsáveis e para a rotina do cuidado" />
         <Card>
           <CardContent>
             <Typography fontWeight={800}>Hipoglicemia: ação rápida</Typography>
@@ -19,4 +23,3 @@ export default function LibraryView() {
     </AppShell>
   );
 }
-

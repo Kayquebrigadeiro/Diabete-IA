@@ -1,6 +1,17 @@
-import { Card, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import type { ReactNode } from 'react';
 
-export function AppointmentCard({ title, subtitle, status }: { title: string; subtitle: string; status: string }) {
+export function AppointmentCard({
+  title,
+  subtitle,
+  status,
+  actions,
+}: {
+  title: string;
+  subtitle: string;
+  status: string;
+  actions?: ReactNode;
+}) {
   return (
     <Card>
       <CardContent>
@@ -14,9 +25,9 @@ export function AppointmentCard({ title, subtitle, status }: { title: string; su
           <Typography variant="caption" color="primary.main" fontWeight={700}>
             {status}
           </Typography>
+          {actions ? <Box sx={{ pt: 1 }}>{actions}</Box> : null}
         </Stack>
       </CardContent>
     </Card>
   );
 }
-
