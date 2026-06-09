@@ -5,40 +5,41 @@ const toHsl = (h: number, s: number, l: number) => `hsl(${h} ${s}% ${l}%)`;
 export const appTheme = createTheme({
   palette: {
     primary: {
-      main: toHsl(210, 80, 50),
-      light: toHsl(210, 80, 60),
-      dark: toHsl(210, 80, 38),
+      main: toHsl(210, 85, 55),
+      light: toHsl(210, 85, 65),
+      dark: toHsl(210, 85, 45),
     },
     secondary: {
-      main: toHsl(150, 60, 45),
-      light: toHsl(150, 60, 56),
-      dark: toHsl(150, 60, 34),
+      main: toHsl(150, 70, 45),
+      light: toHsl(150, 70, 55),
+      dark: toHsl(150, 70, 35),
     },
     error: {
-      main: toHsl(0, 75, 55),
+      main: toHsl(0, 80, 60),
     },
     warning: {
-      main: toHsl(40, 90, 55),
+      main: toHsl(40, 95, 60),
     },
     background: {
-      default: 'hsl(210 20% 98%)',
-      paper: 'rgba(255,255,255,0.78)',
+      default: 'transparent',
+      paper: 'rgba(255,255,255,0.85)',
     },
     text: {
-      primary: 'hsl(220 35% 13%)',
-      secondary: 'hsl(220 12% 42%)',
+      primary: 'hsl(220 40% 12%)',
+      secondary: 'hsl(220 15% 40%)',
     },
   },
   typography: {
-    fontFamily: ['Inter', 'Roboto', 'system-ui', 'sans-serif'].join(','),
-    h1: { fontSize: '2rem', fontWeight: 800 },
-    h2: { fontSize: '1.5rem', fontWeight: 800 },
+    fontFamily: ['Outfit', 'Inter', 'system-ui', 'sans-serif'].join(','),
+    h1: { fontSize: '2.25rem', fontWeight: 800, letterSpacing: '-0.02em' },
+    h2: { fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.01em' },
     h3: { fontSize: '1.25rem', fontWeight: 700 },
-    body1: { fontSize: '1rem' },
+    h4: { fontSize: '1.125rem', fontWeight: 600 },
+    body1: { fontSize: '1rem', letterSpacing: '0.01em' },
     body2: { fontSize: '0.875rem' },
   },
   shape: {
-    borderRadius: 16,
+    borderRadius: 20,
   },
   components: {
     MuiButton: {
@@ -46,17 +47,38 @@ export const appTheme = createTheme({
         root: {
           borderRadius: 999,
           textTransform: 'none',
-          minHeight: 44,
+          fontWeight: 600,
+          minHeight: 48,
+          boxShadow: 'none',
+          transition: 'all 0.2s ease-in-out',
+          '&:hover': {
+            transform: 'translateY(-1px)',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          },
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
-          borderRadius: 20,
-          background: 'rgba(255,255,255,0.8)',
-          backdropFilter: 'blur(14px)',
-          border: '1px solid rgba(15,23,42,0.08)',
+          borderRadius: 24,
+          background: 'rgba(255,255,255,0.7)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255,255,255,0.5)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.04)',
+          transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+          '&:hover': {
+            boxShadow: '0 12px 48px rgba(0,0,0,0.08)',
+          },
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          background: 'rgba(255,255,255,0.5)',
+          backdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(255,255,255,0.3)',
         },
       },
     },

@@ -1,6 +1,9 @@
 :root {
   color-scheme: light;
-  font-family: Inter, Roboto, system-ui, sans-serif;
+  font-family: 'Inter', 'Outfit', system-ui, sans-serif;
+  --bg-gradient: radial-gradient(circle at top left, rgba(44, 138, 255, 0.08), transparent 40%),
+                 radial-gradient(circle at bottom right, rgba(60, 187, 126, 0.08), transparent 40%),
+                 linear-gradient(135deg, hsl(210, 20%, 98%), hsl(210, 24%, 94%));
 }
 
 * {
@@ -11,14 +14,16 @@ html,
 body,
 #root {
   height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(44, 138, 255, 0.12), transparent 30%),
-    radial-gradient(circle at top right, rgba(60, 187, 126, 0.12), transparent 28%),
-    linear-gradient(180deg, hsl(210 20% 98%), hsl(210 28% 95%));
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -26,3 +31,17 @@ a {
   text-decoration: none;
 }
 
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
