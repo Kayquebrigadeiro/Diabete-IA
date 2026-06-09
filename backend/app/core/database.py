@@ -12,7 +12,7 @@ class Base(DeclarativeBase):
 
 settings = get_settings()
 from sqlalchemy.pool import NullPool
-engine = create_async_engine(settings.database_url, echo=False, future=True, poolclass=NullPool, connect_args={'prepared_statement_cache_size': 0, 'statement_cache_size': 0})
+engine = create_async_engine(settings.async_database_url, echo=False, future=True, poolclass=NullPool)
 AsyncSessionLocal = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 

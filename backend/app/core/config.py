@@ -28,6 +28,16 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:5173,http://localhost:3000"
 
     @property
+    def async_database_url(self) -> str:
+        """Normalize DATABASE_URL to use psycopg (v3) async driver."""
+        url = self.database_url
+        if url.startswith("postgresql://"):
+            url = url.replace("postgresql://", "postgresql+psycopg://", 1)
+        elif url.startswith("postgres://"):
+            url = url.replace("postgres://", "postgresql+psycopg://", 1)
+        return url
+
+    @property
     def cors_origin_list(self) -> list[str]:
         return [item.strip() for item in self.cors_origins.split(",") if item.strip()]
 
