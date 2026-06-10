@@ -37,11 +37,14 @@ export default function LoginView() {
                 }}
               >
                 <Box>
+                  <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
+                    <img src="/images/logo.svg" alt="Auri" style={{ width: 80, height: 80 }} />
+                  </Box>
                   <Typography variant="overline" sx={{ letterSpacing: 2, color: 'primary.main', fontWeight: 800 }}>
                     Acesso seguro
                   </Typography>
                   <Typography variant="h2" component="h1" sx={{ mt: 1 }}>
-                    Diabetes Guardian AI
+                    Auri
                   </Typography>
                   <Typography color="text.secondary" sx={{ mt: 1.5, lineHeight: 1.8 }}>
                     Um espaço desenhado para famílias que precisam entrar, entender e agir sem perder tempo com telas confusas.
@@ -138,6 +141,7 @@ export default function LoginView() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       autoComplete="current-password"
+                      helperText="Use a senha cadastrada. No cadastro, ela deve ter pelo menos 8 caracteres."
                     />
                   </Stack>
 

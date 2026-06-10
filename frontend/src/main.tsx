@@ -5,16 +5,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Toaster } from 'sonner';
 import App from './App';
-import { appTheme } from './styles/theme';
 import { AuthProvider } from './context/AuthContext';
+import { createAppTheme } from './styles/theme';
 import './styles/global.css';
 
 const queryClient = new QueryClient();
+const theme = createAppTheme('light');
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={appTheme}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <AuthProvider>
           <BrowserRouter>

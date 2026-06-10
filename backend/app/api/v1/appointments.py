@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_session
-from app.schemas.entities import AppointmentCreate, AppointmentResponse, AppointmentUpdate
+from app.schemas.entities import AppointmentCancelRequest, AppointmentCreate, AppointmentResponse, AppointmentRescheduleRequest, AppointmentUpdate
 from app.services.medical_services import AppointmentService
 
 router = APIRouter(prefix="/appointments", tags=["appointments"])
@@ -28,13 +28,13 @@ async def update_appointment(appointment_id: UUID, payload: AppointmentUpdate, s
 
 
 @router.put("/{appointment_id}/reschedule", response_model=AppointmentResponse)
-async def reschedule(appointment_id: UUID, new_time: datetime, reason: str, session: AsyncSession = Depends(get_session)):
-    return await service.reschedule(session, appointment_id, new_time, reason)
+async def reschedule(appointment_id: UUID, payload: AppointmentRescheduleRequest, session: AsyncSession = Depends(get_session)):
+    return await service.reschedule(session, appointment_id, payload.new_time, payload.reason)
 
 
 @router.put("/{appointment_id}/cancel", response_model=AppointmentResponse)
-async def cancel(appointment_id: UUID, reason: str, session: AsyncSession = Depends(get_session)):
-    return await service.cancel(session, appointment_id, reason)
+async def cancel(appointment_id: UUID, payload: AppointmentCancelRequest, session: AsyncSession = Depends(get_session)):
+    return await service.cancel(session, appointment_id, payload.reason)
 
 
 @router.delete("/{appointment_id}", response_model=AppointmentResponse)

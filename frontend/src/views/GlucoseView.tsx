@@ -70,6 +70,9 @@ export default function GlucoseView() {
             <Card>
               <CardContent>
                 <Stack spacing={2}>
+                  <Box sx={{ display: 'flex', justifyContent: 'center', mb: 1 }}>
+                    <img src="/images/glucose-meter.svg" alt="Glicôsímetro" style={{ width: '100%', maxWidth: 180 }} />
+                  </Box>
                   <Box>
                     <Typography variant="h6" fontWeight={800}>
                       Novo registro

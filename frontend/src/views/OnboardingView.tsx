@@ -5,11 +5,8 @@ import { Box, Button, CircularProgress, Container, Grid, Stack, TextField, Typog
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import { useQueryClient } from '@tanstack/react-query';
-import { medicalApi } from '../services/medical';
-import { useAuthContext } from '../context/AuthContext';
 import { GlassCard } from '../components/common/GlassCard';
-import { useChildren } from '../hooks/useChildren';
+import { useChildren, useCreateChild } from '../hooks/useChildren';
 
 const onboardingSchema = z
   .object({
@@ -34,14 +31,9 @@ type OnboardingForm = z.infer<typeof onboardingSchema>;
 
 export default function OnboardingView() {
   const navigate = useNavigate();
-  const queryClient = useQueryClient();
-  const { userId } = useAuthContext();
   const redirectedRef = useRef(false);
-  const {
-    data: children = [],
-    isLoading,
-    isSuccess,
-  } = useChildren(userId);
+  const { data: children = [], isLoading, isSuccess } = useChildren();
+  const createChild = useCreateChild();
 
   const activeChild = useMemo(() => children[0] ?? null, [children]);
 
@@ -67,20 +59,13 @@ export default function OnboardingView() {
   }, [activeChild, isSuccess, navigate]);
 
   const onSubmit = async (formData: OnboardingForm) => {
-    if (!userId) {
-      toast.error('Sessão inválida. Entre novamente para continuar.');
-      navigate('/login', { replace: true });
-      return;
-    }
-
     try {
-      await medicalApi.children.create({
+      await createChild.mutateAsync({
         name: formData.name.trim(),
         birth_date: formData.birthDate,
         diagnosis_date: formData.diagnosisDate,
         weight_kg: formData.weightKg,
       });
-      await queryClient.invalidateQueries({ queryKey: ['children', userId] });
       toast.success('Perfil da criança criado com sucesso.');
       navigate('/', { replace: true });
     } catch (error) {
@@ -104,6 +89,9 @@ export default function OnboardingView() {
         <Grid container spacing={3} alignItems="stretch">
           <Grid item xs={12} md={5}>
             <Stack spacing={3} sx={{ height: '100%', justifyContent: 'center' }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
+                <img src="/images/hero-child.svg" alt="Criança" style={{ width: '100%', maxWidth: 320 }} />
+              </Box>
               <Box>
                 <Typography
                   variant="overline"
@@ -224,8 +212,8 @@ export default function OnboardingView() {
                       <Button variant="outlined" color="inherit" onClick={() => navigate('/', { replace: true })}>
                         Voltar ao dashboard
                       </Button>
-                      <Button type="submit" variant="contained" size="large" disabled={isSubmitting}>
-                        {isSubmitting ? 'Salvando...' : 'Salvar e continuar'}
+                      <Button type="submit" variant="contained" size="large" disabled={isSubmitting || createChild.isPending}>
+                        {isSubmitting || createChild.isPending ? 'Salvando...' : 'Salvar e continuar'}
                       </Button>
                     </Stack>
                   </Stack>

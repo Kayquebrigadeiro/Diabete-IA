@@ -3,14 +3,55 @@ import { Alert, Box, Button, Container, Grid, Stack, TextField, Typography } fro
 import PersonAddRoundedIcon from '@mui/icons-material/PersonAddRounded';
 import ManageAccountsRoundedIcon from '@mui/icons-material/ManageAccountsRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
+import { AxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useRegister } from '../hooks/useAuth';
 import { GlassCard } from '../components/common/GlassCard';
+
+type RegisterForm = {
+  name: string;
+  email: string;
+  password: string;
+  phone: string;
+};
+
+const passwordRequirementText = 'Use pelo menos 8 caracteres.';
+
+function getRegisterErrorMessage(error: unknown) {
+  if (error instanceof AxiosError) {
+    const data = error.response?.data as { detail?: unknown; error?: { message?: string } } | undefined;
+    if (data?.error?.message) {
+      return data.error.message;
+    }
+    if (Array.isArray(data?.detail)) {
+      const firstMessage = data.detail.find((item): item is { msg: string } => typeof item?.msg === 'string')?.msg;
+      if (firstMessage) {
+        return firstMessage;
+      }
+    }
+  }
+  return 'Não foi possível criar a conta. Verifique os dados e tente novamente.';
+}
+
+function validateRegisterForm(form: RegisterForm) {
+  if (form.name.trim().length < 2) {
+    return 'Informe um nome com pelo menos 2 caracteres.';
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+    return 'Informe um e-mail válido.';
+  }
+  if (form.password.length < 8) {
+    return 'A senha precisa ter pelo menos 8 caracteres.';
+  }
+  return null;
+}
 
 export default function RegisterView() {
   const navigate = useNavigate();
   const register = useRegister();
   const [form, setForm] = useState({ name: '', email: '', password: '', phone: '' });
+  const [validationError, setValidationError] = useState<string | null>(null);
+  const errorMessage = validationError ?? (register.isError ? getRegisterErrorMessage(register.error) : null);
 
   return (
     <Box
@@ -117,20 +158,34 @@ export default function RegisterView() {
                     </Typography>
                   </Box>
 
-                  {register.isError ? (
+                  {errorMessage ? (
                     <Alert severity="error" variant="outlined">
-                      Não foi possível criar a conta. Verifique os dados e tente novamente.
+                      {errorMessage}
                     </Alert>
                   ) : null}
 
                   <Stack spacing={2}>
-                    <TextField label="Nome" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-                    <TextField label="E-mail" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
-                    <TextField label="Telefone" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} />
+                    <TextField label="Nome" value={form.name} autoComplete="name" onChange={(e) => setForm({ ...form, name: e.target.value })} />
+                    <TextField
+                      label="E-mail"
+                      type="email"
+                      value={form.email}
+                      autoComplete="email"
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    />
+                    <TextField
+                      label="Telefone"
+                      type="tel"
+                      value={form.phone}
+                      autoComplete="tel"
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    />
                     <TextField
                       label="Senha"
                       type="password"
                       value={form.password}
+                      autoComplete="new-password"
+                      helperText={passwordRequirementText}
                       onChange={(e) => setForm({ ...form, password: e.target.value })}
                     />
                   </Stack>
@@ -140,8 +195,22 @@ export default function RegisterView() {
                     size="large"
                     disabled={register.isPending}
                     onClick={async () => {
-                      await register.mutateAsync(form);
-                      navigate('/login');
+                      const nextValidationError = validateRegisterForm(form);
+                      setValidationError(nextValidationError);
+                      if (nextValidationError) {
+                        return;
+                      }
+                      try {
+                        await register.mutateAsync({
+                          name: form.name.trim(),
+                          email: form.email.trim(),
+                          password: form.password,
+                          phone: form.phone.trim() || undefined,
+                        });
+                        navigate('/login');
+                      } catch {
+                        // A mutation guarda o erro para renderizar o alerta acima.
+                      }
                     }}
                   >
                     {register.isPending ? 'Criando...' : 'Criar conta'}

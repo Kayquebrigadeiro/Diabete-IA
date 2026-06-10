@@ -7,7 +7,7 @@ const ACTIVE_CHILD_STORAGE_KEY = 'active_child_id';
 
 export function useActiveChild() {
   const { userId } = useAuthContext();
-  const childrenQuery = useChildren(userId);
+  const childrenQuery = useChildren();
   const storageKey = `${ACTIVE_CHILD_STORAGE_KEY}:${userId || 'guest'}`;
   const [activeChildId, setActiveChildId] = useState(() => localStorage.getItem(storageKey) ?? '');
 

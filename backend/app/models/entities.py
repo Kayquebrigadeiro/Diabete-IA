@@ -44,6 +44,7 @@ class Child(UUIDMixin, TimestampMixin, Base):
     diagnosis_date: Mapped[date | None] = mapped_column(Date)
     user: Mapped["User"] = sa_relationship(back_populates="children")
     medication_schedules: Mapped[list["MedicationSchedule"]] = sa_relationship(back_populates="child", cascade="all,delete-orphan")
+    medications: Mapped[list["Medication"]] = sa_relationship(back_populates="child", cascade="all,delete-orphan")
     medication_logs: Mapped[list["MedicationLog"]] = sa_relationship(back_populates="child", cascade="all,delete-orphan")
     appointments: Mapped[list["Appointment"]] = sa_relationship(back_populates="child", cascade="all,delete-orphan")
     exams: Mapped[list["Exam"]] = sa_relationship(back_populates="child", cascade="all,delete-orphan")
@@ -55,10 +56,14 @@ class Child(UUIDMixin, TimestampMixin, Base):
 class Medication(UUIDMixin, TimestampMixin, Base):
     __tablename__ = "medications"
 
+    child_id: Mapped[Any] = mapped_column(UUID(as_uuid=True), ForeignKey("children.id", ondelete="CASCADE"), index=True)
     name: Mapped[str] = mapped_column(String(255))
-    manufacturer: Mapped[str | None] = mapped_column(String(255))
-    type: Mapped[str] = mapped_column(String(100))
-    description: Mapped[str | None] = mapped_column(Text)
+    medication_type: Mapped[str] = mapped_column(String(100))
+    dosage: Mapped[str] = mapped_column(String(100))
+    frequency: Mapped[str] = mapped_column(String(100))
+    scheduled_time: Mapped[str | None] = mapped_column(String(10))
+    notes: Mapped[str | None] = mapped_column(Text)
+    child: Mapped["Child"] = sa_relationship(back_populates="medications")
     schedules: Mapped[list["MedicationSchedule"]] = sa_relationship(back_populates="medication")
     logs: Mapped[list["MedicationLog"]] = sa_relationship(back_populates="medication")
 

@@ -14,7 +14,6 @@ service = ChildService()
 
 @router.post("", response_model=ChildResponse)
 async def create(payload: ChildCreate, current_user_id: str = Depends(get_current_user_id), session: AsyncSession = Depends(get_session)):
-    payload.user_id = UUID(current_user_id)
     return await service.create(session, UUID(current_user_id), payload)
 
 

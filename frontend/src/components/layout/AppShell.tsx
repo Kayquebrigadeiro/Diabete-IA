@@ -59,7 +59,7 @@ export function AppShell({ title, children }: { title: string; children: ReactNo
             <Stack direction="row" alignItems="center" justifyContent="space-between" gap={2}>
               <Box>
                 <Typography variant="overline" sx={{ color: 'primary.main', letterSpacing: 2, fontWeight: 800 }}>
-                  Diabete-IA
+                  Auri
                 </Typography>
                 <Typography variant="h6" component="div" fontWeight={800} sx={{ letterSpacing: '-0.02em', lineHeight: 1.1 }}>
                   {title}

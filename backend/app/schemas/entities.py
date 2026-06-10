@@ -31,7 +31,7 @@ class UserResponse(IDResponse):
 
 
 class ChildCreate(BaseModel):
-    user_id: UUID
+    user_id: UUID | None = None
     name: str
     birth_date: date
     weight_kg: float | None = Field(default=None, ge=0)
@@ -54,10 +54,13 @@ class ChildResponse(IDResponse):
 
 
 class MedicationCreate(BaseModel):
+    child_id: UUID
     name: str
-    manufacturer: str | None = None
-    type: str
-    description: str | None = None
+    medication_type: str
+    dosage: str
+    frequency: str
+    scheduled_time: str | None = None
+    notes: str | None = None
 
 
 class MedicationUpdate(BaseModel):
@@ -68,10 +71,13 @@ class MedicationUpdate(BaseModel):
 
 
 class MedicationResponse(IDResponse):
+    child_id: UUID
     name: str
-    manufacturer: str | None = None
-    type: str
-    description: str | None = None
+    medication_type: str
+    dosage: str
+    frequency: str
+    scheduled_time: str | None = None
+    notes: str | None = None
 
 
 class MedicationScheduleCreate(BaseModel):
@@ -168,6 +174,15 @@ class AppointmentHistoryResponse(ORMBaseModel):
     new_time: datetime
     reason: str | None = None
     changed_at: datetime
+
+
+class AppointmentRescheduleRequest(BaseModel):
+    new_time: datetime
+    reason: str
+
+
+class AppointmentCancelRequest(BaseModel):
+    reason: str
 
 
 class ExamCreate(BaseModel):

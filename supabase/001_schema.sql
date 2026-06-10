@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS medication_logs (
     status VARCHAR(50) NOT NULL,
     notes TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMPTZ
 );
 
@@ -100,6 +101,7 @@ CREATE TABLE IF NOT EXISTS exams (
     due_at DATE,
     status VARCHAR(50) NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMPTZ
 );
 
@@ -113,6 +115,7 @@ CREATE TABLE IF NOT EXISTS exam_results (
     realized_at DATE NOT NULL,
     notes TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMPTZ
 );
 
@@ -128,6 +131,7 @@ CREATE TABLE IF NOT EXISTS glucose_records (
     notes TEXT,
     recorded_at TIMESTAMPTZ NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMPTZ
 );
 
@@ -139,6 +143,7 @@ CREATE TABLE IF NOT EXISTS emergency_contacts (
     phone VARCHAR(50) NOT NULL,
     is_primary BOOLEAN DEFAULT FALSE,
     created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMPTZ
 );
 
@@ -222,4 +227,3 @@ CREATE INDEX IF NOT EXISTS idx_glucose_records_child_date ON glucose_records(chi
 CREATE INDEX IF NOT EXISTS idx_med_logs_child_taken ON medication_logs(child_id, taken_at DESC) WHERE deleted_at IS NULL;
 
 COMMIT;
-

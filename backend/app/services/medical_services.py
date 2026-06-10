@@ -65,8 +65,8 @@ class ChildService:
         return await self.repo.list(session, Child.user_id == user_id)
 
     async def create(self, session: AsyncSession, current_user_id: UUID, payload: ChildCreate) -> Child:
-        if payload.user_id != current_user_id:
-            raise ValidationException("A criança deve pertencer ao usuário autenticado")
+        # Sempre usa o user_id do usuário autenticado, ignorando qualquer valor enviado no payload
+        payload.user_id = current_user_id
         return await self.repo.create(session, payload.model_dump())
 
 
@@ -228,6 +228,14 @@ class ExamService:
 
     async def add_result(self, session: AsyncSession, payload: ExamResultCreate) -> ExamResult:
         return await self.result_repo.create(session, payload.model_dump())
+
+    async def update(self, session: AsyncSession, exam_id: UUID, data: dict) -> Exam:
+        exam = await self.repo.get(session, exam_id)
+        return await self.repo.update(session, exam, data)
+
+    async def delete(self, session: AsyncSession, exam_id: UUID) -> Exam:
+        exam = await self.repo.get(session, exam_id)
+        return await self.repo.soft_delete(session, exam)
 
 
 class GlucoseService:

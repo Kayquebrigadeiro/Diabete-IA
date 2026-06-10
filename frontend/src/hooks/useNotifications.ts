@@ -1,11 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { medicalApi } from '../services/medical';
 
-export function useNotifications(userId: string) {
+export function useNotifications() {
   return useQuery({
-    queryKey: ['notifications', userId],
-    queryFn: () => medicalApi.notifications.list(userId),
-    enabled: Boolean(userId),
+    queryKey: ['notifications'],
+    queryFn: () => medicalApi.notifications.list(),
   });
 }
-

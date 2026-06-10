@@ -2,15 +2,13 @@ import { Alert, Card, CardContent, Stack, Typography } from '@mui/material';
 import { format } from 'date-fns';
 import { AppShell } from '../components/layout/AppShell';
 import { SectionHeader } from '../components/common/SectionHeader';
-import { useAuthContext } from '../context/AuthContext';
 import { useActiveChild } from '../hooks/useActiveChild';
 import { useNotifications } from '../hooks/useNotifications';
 
 export default function NotificationsView() {
-  const { userId } = useAuthContext();
   const { activeChild } = useActiveChild();
   const childLabel = activeChild?.name ?? 'criança ativa';
-  const notificationsQuery = useNotifications(userId);
+  const notificationsQuery = useNotifications();
   const notifications = (notificationsQuery.data ?? []).filter(
     (notification) => !activeChild || !notification.child_id || notification.child_id === activeChild.id,
   );
