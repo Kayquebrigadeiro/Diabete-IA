@@ -25,7 +25,10 @@ class Settings(BaseSettings):
     deepseek_embedding_model: str = "deepseek-embedding"
     max_glycemia_value: int = 600
     min_glycemia_value: int = 20
-    cors_origins: str = "http://localhost:5173,http://localhost:3000"
+    allowed_origin: str = Field(
+        default="http://localhost:5173",
+        alias="ALLOWED_ORIGIN",
+    )
 
     @property
     def async_database_url(self) -> str:
@@ -36,10 +39,6 @@ class Settings(BaseSettings):
         elif url.startswith("postgres://"):
             url = url.replace("postgres://", "postgresql+psycopg://", 1)
         return url
-
-    @property
-    def cors_origin_list(self) -> list[str]:
-        return [item.strip() for item in self.cors_origins.split(",") if item.strip()]
 
 
 @lru_cache

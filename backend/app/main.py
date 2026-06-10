@@ -9,21 +9,13 @@ settings = get_settings()
 
 app = FastAPI(title=settings.app_name)
 
-# Configuração de CORS para permitir requisições do frontend
-origins = [
-    "https://auri-ecru.vercel.app",  # Frontend em produção
-    "http://localhost:5173",          # Frontend local (Vite)
-    "http://localhost:3000",          # Frontend local alternativo
-    "http://127.0.0.1:5173",
-    "http://127.0.0.1:3000",
-]
-
+# CORS configuration - allows only specified origin in production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[settings.allowed_origin],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
 )
 register_error_handlers(app)
 app.include_router(api_router, prefix=settings.api_v1_prefix)
