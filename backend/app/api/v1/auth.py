@@ -1,4 +1,5 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
+import traceback
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.database import get_session
@@ -11,8 +12,17 @@ service = AuthService()
 
 @router.post("/register")
 async def register(payload: RegisterRequest, session: AsyncSession = Depends(get_session)):
-    user = await service.register(session, payload)
-    return {"id": str(user.id), "email": user.email, "name": user.name}
+    try:
+        user = await service.register(session, payload)
+        return {"id": str(user.id), "email": user.email, "name": user.name}
+    except Exception as e:
+        try:
+            await session.rollback()
+        except Exception:
+            pass
+        error_detalhado = "".join(traceback.format_exception(type(e), e, e.__traceback__))
+        print("=== ERRO DETALHADO CRÍTICO ===\n" + error_detalhado)
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 
 @router.post("/login", response_model=TokenResponse)
