@@ -7,6 +7,14 @@ class RegisterRequest(BaseModel):
     password: str = Field(min_length=8)
     phone: str | None = None
 
+    @field_validator("password")
+    def password_max_bytes(cls, v: str) -> str:
+        if v is None:
+            return v
+        if len(v.encode("utf-8")) > 72:
+            raise ValueError("password must be at most 72 bytes when encoded in UTF-8")
+        return v
+
 
 class LoginRequest(BaseModel):
     email: EmailStr

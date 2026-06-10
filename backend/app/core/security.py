@@ -12,12 +12,26 @@ settings = get_settings()
 revoked_jti: set[str] = set()
 
 
+def _truncate_password(password: str) -> str:
+    """Truncate password to at most 72 bytes (bcrypt limit) preserving UTF-8 characters."""
+    if password is None:
+        return password
+    b = password.encode("utf-8")
+    if len(b) <= 72:
+        return password
+    # slice to 72 bytes and decode ignoring partial char at the end
+    truncated = b[:72].decode("utf-8", errors="ignore")
+    return truncated
+
+
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    safe = _truncate_password(password)
+    return pwd_context.hash(safe)
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    safe = _truncate_password(plain_password)
+    return pwd_context.verify(safe, hashed_password)
 
 
 def _create_token(subject: str, token_type: str, expires_delta: timedelta, extra: dict | None = None) -> str:
