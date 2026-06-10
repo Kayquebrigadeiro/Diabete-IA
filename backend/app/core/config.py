@@ -25,10 +25,14 @@ class Settings(BaseSettings):
     deepseek_embedding_model: str = "deepseek-embedding"
     max_glycemia_value: int = 600
     min_glycemia_value: int = 20
-    allowed_origin: str = Field(
+    allowed_origins: str = Field(
         default="http://localhost:5173",
         alias="ALLOWED_ORIGIN",
     )
+
+    @property
+    def allowed_origin_list(self) -> list[str]:
+        return [item.strip() for item in self.allowed_origins.split(",") if item.strip()]
 
     @property
     def async_database_url(self) -> str:

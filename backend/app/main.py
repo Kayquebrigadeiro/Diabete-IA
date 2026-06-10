@@ -12,7 +12,7 @@ app = FastAPI(title=settings.app_name)
 # CORS configuration - allows only specified origin in production
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[settings.allowed_origin],
+    allow_origins=settings.allowed_origin_list,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
