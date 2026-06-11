@@ -10,8 +10,8 @@ import { GlassCard } from '../components/common/GlassCard';
 export default function LoginView() {
   const navigate = useNavigate();
   const login = useLogin();
-  const [email, setEmail] = useState('mae@guardian.ai');
-  const [password, setPassword] = useState('12345678');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <Box

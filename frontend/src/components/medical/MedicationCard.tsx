@@ -1,7 +1,15 @@
 import { Button, Card, CardContent, Stack, Typography } from '@mui/material';
 import type { Medication } from '../../types';
 
-export function MedicationCard({ item }: { item: Medication }) {
+export function MedicationCard({
+  item,
+  onEdit,
+  onDelete,
+}: {
+  item: Medication;
+  onEdit?: (item: Medication) => void;
+  onDelete?: (item: Medication) => void;
+}) {
   return (
     <Card>
       <CardContent>
@@ -14,16 +22,19 @@ export function MedicationCard({ item }: { item: Medication }) {
             {item.notes ? ` - ${item.notes}` : ''}
           </Typography>
           <Stack direction="row" spacing={1}>
-            <Button size="small" variant="outlined">
-              Editar
-            </Button>
-            <Button size="small" color="error" variant="outlined">
-              Excluir
-            </Button>
+            {onEdit && (
+              <Button size="small" variant="outlined" onClick={() => onEdit(item)}>
+                Editar
+              </Button>
+            )}
+            {onDelete && (
+              <Button size="small" color="error" variant="outlined" onClick={() => onDelete(item)}>
+                Excluir
+              </Button>
+            )}
           </Stack>
         </Stack>
       </CardContent>
     </Card>
   );
 }
-

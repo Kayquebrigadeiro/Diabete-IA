@@ -11,7 +11,7 @@ export const medicalApi = {
 
   // MEDICATIONS - Global medication catalog
   medications: {
-    list: async () => (await api.get<Medication[]>('/medications')).data,
+    list: async (childId: string) => (await api.get<Medication[]>('/medications', { params: { child_id: childId } })).data,
     create: async (payload: Omit<Medication, 'id' | 'created_at' | 'updated_at' | 'deleted_at'>) => 
       (await api.post<Medication>('/medications', payload)).data,
     update: async (medicationId: string, payload: Partial<Medication>) =>

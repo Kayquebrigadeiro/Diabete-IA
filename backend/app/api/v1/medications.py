@@ -17,8 +17,8 @@ async def create(payload: MedicationCreate, session: AsyncSession = Depends(get_
 
 
 @router.get("", response_model=list[MedicationResponse])
-async def list_medications(session: AsyncSession = Depends(get_session)):
-    return await service.list(session)
+async def list_medications(child_id: UUID, session: AsyncSession = Depends(get_session)):
+    return await service.list_for_child(session, child_id)
 
 
 @router.put("/{medication_id}", response_model=MedicationResponse)

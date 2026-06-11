@@ -77,6 +77,9 @@ class MedicationService:
     async def list(self, session: AsyncSession) -> list[Medication]:
         return await self.repo.list(session)
 
+    async def list_for_child(self, session: AsyncSession, child_id: UUID) -> list[Medication]:
+        return await self.repo.list(session, Medication.child_id == child_id)
+
     async def create(self, session: AsyncSession, payload: MedicationCreate) -> Medication:
         return await self.repo.create(session, payload.model_dump())
 

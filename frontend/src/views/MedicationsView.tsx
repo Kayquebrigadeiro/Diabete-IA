@@ -12,14 +12,16 @@ import { MedicationCard } from '../components/medical/MedicationCard';
 import { useActiveChild } from '../hooks/useActiveChild';
 import { useMedications } from '../hooks/useMedications';
 import { medicalApi } from '../services/medical';
+import type { Medication } from '../types';
 
 export default function MedicationsView() {
   const queryClient = useQueryClient();
   const { activeChild } = useActiveChild();
   const childLabel = activeChild?.name ?? 'criança ativa';
-  const medicationsQuery = useMedications();
+  const medicationsQuery = useMedications(activeChild?.id ?? '');
+
   const [open, setOpen] = useState(false);
-  
+  const [editingItem, setEditingItem] = useState<Medication | null>(null);
   const [name, setName] = useState('');
   const [type, setType] = useState('INSULINA_BASAL');
   const [dosage, setDosage] = useState('');
@@ -27,9 +29,45 @@ export default function MedicationsView() {
   const [scheduledTime, setScheduledTime] = useState('');
   const [notes, setNotes] = useState('');
 
-  const createMutation = useMutation({
+  const resetForm = () => {
+    setEditingItem(null);
+    setName('');
+    setType('INSULINA_BASAL');
+    setDosage('');
+    setFrequency('');
+    setScheduledTime('');
+    setNotes('');
+  };
+
+  const openCreate = () => {
+    resetForm();
+    setOpen(true);
+  };
+
+  const openEdit = (item: Medication) => {
+    setEditingItem(item);
+    setName(item.name);
+    setType(item.medication_type);
+    setDosage(item.dosage);
+    setFrequency(item.frequency);
+    setScheduledTime(item.scheduled_time ?? '');
+    setNotes(item.notes ?? '');
+    setOpen(true);
+  };
+
+  const saveMutation = useMutation({
     mutationFn: async () => {
       if (!activeChild) throw new Error('Selecione uma criança');
+      if (editingItem) {
+        return medicalApi.medications.update(editingItem.id, {
+          name,
+          medication_type: type,
+          dosage,
+          frequency,
+          scheduled_time: scheduledTime || undefined,
+          notes: notes || undefined,
+        });
+      }
       return medicalApi.medications.create({
         child_id: activeChild.id,
         name,
@@ -41,26 +79,34 @@ export default function MedicationsView() {
       });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['medications'] });
-      toast.success('Medicamento adicionado com sucesso!');
+      queryClient.invalidateQueries({ queryKey: ['medications', activeChild?.id] });
+      toast.success(editingItem ? 'Medicamento atualizado!' : 'Medicamento adicionado!');
       setOpen(false);
-      setName('');
-      setDosage('');
-      setFrequency('');
-      setScheduledTime('');
-      setNotes('');
+      resetForm();
     },
-    onError: () => {
-      toast.error('Erro ao adicionar medicamento');
-    },
+    onError: () => toast.error('Erro ao salvar medicamento'),
   });
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) => medicalApi.medications.delete(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['medications', activeChild?.id] });
+      toast.success('Medicamento removido!');
+    },
+    onError: () => toast.error('Erro ao remover medicamento'),
+  });
+
+  const handleDelete = (item: Medication) => {
+    if (!window.confirm(`Excluir "${item.name}"?`)) return;
+    deleteMutation.mutate(item.id);
+  };
 
   const handleSubmit = () => {
     if (!name || !dosage || !frequency) {
       toast.error('Preencha todos os campos obrigatórios');
       return;
     }
-    createMutation.mutate();
+    saveMutation.mutate();
   };
 
   return (
@@ -71,13 +117,7 @@ export default function MedicationsView() {
           subtitle="Catálogo usado para montar a terapia e apoiar o cuidado diário"
           eyebrow="Terapia"
           action={
-            <Button
-              variant="contained"
-              startIcon={<AddIcon />}
-              onClick={() => setOpen(true)}
-              disabled={!activeChild}
-              size="large"
-            >
+            <Button variant="contained" startIcon={<AddIcon />} onClick={openCreate} disabled={!activeChild} size="large">
               Adicionar Medicamento
             </Button>
           }
@@ -91,37 +131,21 @@ export default function MedicationsView() {
         )}
 
         {activeChild && medicationsQuery.isLoading && (
-          <Card>
-            <CardContent>
-              <Typography color="text.secondary">Carregando lista de medicamentos...</Typography>
-            </CardContent>
-          </Card>
+          <Card><CardContent><Typography color="text.secondary">Carregando lista de medicamentos...</Typography></CardContent></Card>
         )}
 
         {activeChild && !medicationsQuery.isLoading && medicationsQuery.data?.length === 0 && (
           <Card>
             <CardContent>
               <Stack spacing={2} alignItems="center" py={4}>
-                <Box
-                  sx={{
-                    width: 80,
-                    height: 80,
-                    borderRadius: '50%',
-                    bgcolor: 'primary.main',
-                    color: 'white',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    opacity: 0.2,
-                  }}
-                >
+                <Box sx={{ width: 80, height: 80, borderRadius: '50%', bgcolor: 'primary.main', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.2 }}>
                   <MedicationIcon sx={{ fontSize: 40 }} />
                 </Box>
                 <Typography variant="h6" fontWeight={800}>Nenhum medicamento cadastrado</Typography>
                 <Typography variant="body2" color="text.secondary" textAlign="center" maxWidth={500}>
-                  Clique no botão "Adicionar Medicamento" acima para cadastrar insulinas, horários e doses. Isso ajuda a acompanhar a rotina completa da criança.
+                  Clique em "Adicionar Medicamento" para cadastrar insulinas, horários e doses.
                 </Typography>
-                <Button variant="contained" startIcon={<AddIcon />} onClick={() => setOpen(true)} size="large">
+                <Button variant="contained" startIcon={<AddIcon />} onClick={openCreate} size="large">
                   Cadastrar Primeiro Medicamento
                 </Button>
               </Stack>
@@ -133,35 +157,29 @@ export default function MedicationsView() {
           <Grid container spacing={2}>
             {medicationsQuery.data.map((item) => (
               <Grid item xs={12} md={6} key={item.id}>
-                <MedicationCard item={item} />
+                <MedicationCard item={item} onEdit={openEdit} onDelete={handleDelete} />
               </Grid>
             ))}
           </Grid>
         )}
 
-        <Dialog open={open} onClose={() => setOpen(false)} maxWidth="md" fullWidth>
+        <Dialog open={open} onClose={() => { setOpen(false); resetForm(); }} maxWidth="md" fullWidth>
           <DialogTitle>
             <Stack direction="row" alignItems="center" spacing={1.5}>
               <MedicationIcon color="primary" />
               <Box>
-                <Typography variant="h6" fontWeight={800}>Adicionar Novo Medicamento</Typography>
+                <Typography variant="h6" fontWeight={800}>
+                  {editingItem ? 'Editar Medicamento' : 'Adicionar Novo Medicamento'}
+                </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Preencha as informações do medicamento para {childLabel}
+                  {editingItem ? `Editando ${editingItem.name}` : `Para ${childLabel}`}
                 </Typography>
               </Box>
             </Stack>
           </DialogTitle>
           <DialogContent>
             <Stack spacing={3} sx={{ pt: 2 }}>
-              <Alert severity="info" variant="outlined">
-                <Typography variant="body2" fontWeight={700}>Dica: Seja específico</Typography>
-                <Typography variant="body2">
-                  Inclua o nome comercial da insulina (ex: Lantus, NovoRapid), a dosagem exata e os horários. Isso facilita o acompanhamento.
-                </Typography>
-              </Alert>
-
               <Divider />
-
               <TextField
                 label="Nome do Medicamento"
                 value={name}
@@ -170,7 +188,6 @@ export default function MedicationsView() {
                 required
                 helperText="Digite o nome comercial ou genérico da insulina"
               />
-
               <FormControl fullWidth required>
                 <InputLabel>Tipo de Medicamento</InputLabel>
                 <Select value={type} onChange={(e) => setType(e.target.value)} label="Tipo de Medicamento">
@@ -179,30 +196,14 @@ export default function MedicationsView() {
                   <MenuItem value="OUTRO_MEDICAMENTO">Outro Medicamento</MenuItem>
                 </Select>
               </FormControl>
-
               <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
-                  <TextField
-                    label="Dosagem"
-                    value={dosage}
-                    onChange={(e) => setDosage(e.target.value)}
-                    placeholder="Ex: 10 UI, 5 UI"
-                    required
-                    helperText="Quantidade por aplicação"
-                  />
+                  <TextField label="Dosagem" value={dosage} onChange={(e) => setDosage(e.target.value)} placeholder="Ex: 10 UI" required helperText="Quantidade por aplicação" />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <TextField
-                    label="Frequência"
-                    value={frequency}
-                    onChange={(e) => setFrequency(e.target.value)}
-                    placeholder="Ex: 1x ao dia, 3x ao dia"
-                    required
-                    helperText="Quantas vezes por dia"
-                  />
+                  <TextField label="Frequência" value={frequency} onChange={(e) => setFrequency(e.target.value)} placeholder="Ex: 1x ao dia" required helperText="Quantas vezes por dia" />
                 </Grid>
               </Grid>
-
               <TextField
                 label="Horário Principal (opcional)"
                 type="time"
@@ -210,41 +211,24 @@ export default function MedicationsView() {
                 onChange={(e) => setScheduledTime(e.target.value)}
                 InputLabelProps={{ shrink: true }}
                 helperText="Horário de referência para aplicação"
-                InputProps={{
-                  startAdornment: <AccessTimeIcon sx={{ mr: 1, color: 'text.secondary' }} />,
-                }}
+                InputProps={{ startAdornment: <AccessTimeIcon sx={{ mr: 1, color: 'text.secondary' }} /> }}
               />
-
               <TextField
                 label="Observações (opcional)"
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 multiline
                 rows={3}
-                placeholder="Ex: Aplicar no abdomen, rotar local de aplicação"
-                helperText="Instruções adicionais ou lembretes"
+                placeholder="Ex: Aplicar no abdômen, rotar local de aplicação"
               />
-
-              <Box sx={{ p: 2, bgcolor: 'success.main', color: 'white', borderRadius: 2, opacity: 0.9 }}>
-                <Typography variant="body2" fontWeight={700}>✓ Resumo</Typography>
-                <Typography variant="body2">
-                  {name || '[Nome]'} • {dosage || '[Dose]'} • {frequency || '[Frequência]'}
-                  {scheduledTime && ` • Às ${scheduledTime}`}
-                </Typography>
-              </Box>
             </Stack>
           </DialogContent>
           <DialogActions sx={{ p: 3, pt: 0 }}>
-            <Button onClick={() => setOpen(false)} color="inherit" disabled={createMutation.isPending}>
+            <Button onClick={() => { setOpen(false); resetForm(); }} color="inherit" disabled={saveMutation.isPending}>
               Cancelar
             </Button>
-            <Button
-              onClick={handleSubmit}
-              variant="contained"
-              disabled={createMutation.isPending || !name || !dosage || !frequency}
-              size="large"
-            >
-              {createMutation.isPending ? 'Salvando...' : 'Salvar Medicamento'}
+            <Button onClick={handleSubmit} variant="contained" disabled={saveMutation.isPending || !name || !dosage || !frequency} size="large">
+              {saveMutation.isPending ? 'Salvando...' : editingItem ? 'Salvar Alterações' : 'Salvar Medicamento'}
             </Button>
           </DialogActions>
         </Dialog>

@@ -18,7 +18,7 @@ export default function SchedulesView() {
   const { activeChild } = useActiveChild();
   const childLabel = activeChild?.name ?? 'criança ativa';
   const schedulesQuery = useChildSchedules(activeChild?.id ?? '');
-  const medicationsQuery = useMedications();
+  const medicationsQuery = useMedications(activeChild?.id ?? '');
   const [doseAmount, setDoseAmount] = useState('');
   const [scheduledTime, setScheduledTime] = useState('08:00');
   const [notes, setNotes] = useState('');
