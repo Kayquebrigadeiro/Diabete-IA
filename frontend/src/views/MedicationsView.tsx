@@ -31,10 +31,13 @@ export default function MedicationsView() {
     mutationFn: async () => {
       if (!activeChild) throw new Error('Selecione uma criança');
       return medicalApi.medications.create({
+        child_id: activeChild.id,
         name,
-        manufacturer: undefined,
-        type,
-        description: notes || undefined,
+        medication_type: type,
+        dosage,
+        frequency,
+        scheduled_time: scheduledTime || undefined,
+        notes: notes || undefined,
       });
     },
     onSuccess: () => {

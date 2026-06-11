@@ -10,7 +10,8 @@ export function MedicationCard({ item }: { item: Medication }) {
             {item.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {item.type} {item.description ? `- ${item.description}` : ''}
+            {item.medication_type} • {item.dosage} • {item.frequency}
+            {item.notes ? ` - ${item.notes}` : ''}
           </Typography>
           <Stack direction="row" spacing={1}>
             <Button size="small" variant="outlined">

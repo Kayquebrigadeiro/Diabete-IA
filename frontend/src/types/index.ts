@@ -18,10 +18,13 @@ export interface Child {
 
 export interface Medication {
   id: UUID;
+  child_id: UUID;
   name: string;
-  manufacturer?: string | null;
-  type: string;
-  description?: string | null;
+  medication_type: string;
+  dosage: string;
+  frequency: string;
+  scheduled_time?: string | null;
+  notes?: string | null;
 }
 
 export interface MedicationSchedule {
