@@ -1,9 +1,10 @@
 from fastapi import APIRouter
 
-from app.api.v1 import appointments, auth, chat, children, documents, exams, glucose, logs, medications, notifications, schedules, users
+from app.api.v1 import appointments, auth, chat, children, dashboard, documents, exams, glucose, logs, medications, notifications, schedules, users
 
 api_router = APIRouter()
 api_router.include_router(auth.router)
+api_router.include_router(dashboard.router)
 api_router.include_router(users.router)
 api_router.include_router(children.router)
 api_router.include_router(medications.router)

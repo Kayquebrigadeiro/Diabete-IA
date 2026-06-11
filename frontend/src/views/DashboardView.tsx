@@ -14,6 +14,7 @@ import { GlucoseLineChart } from '../components/glucose/GlucoseLineChart';
 import { TimeInRangeDonut } from '../components/glucose/TimeInRangeDonut';
 import { useActiveChild } from '../hooks/useActiveChild';
 import { useGlucose, useSchedules, useAppointments } from '../hooks/useChildren';
+import { DailyRoutineCard } from '../components/medical/DailyRoutineCard';
 
 export default function DashboardView() {
   const navigate = useNavigate();
@@ -276,41 +277,11 @@ export default function DashboardView() {
           </Grid>
         </Grid>
 
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={5}>
-            <GlassCard sx={{ p: { xs: 2.25, md: 3 } }}>
-              <Stack spacing={1.5}>
-                <Typography variant="h6" fontWeight={800}>
-                  Próximos passos
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  O onboarding já fez o essencial. Agora a família pode enriquecer a rotina aos poucos.
-                </Typography>
-                <Stack spacing={1.25}>
-                  <Typography variant="body2">• Registrar medicamentos e horários.</Typography>
-                  <Typography variant="body2">• Adicionar contatos de emergência.</Typography>
-                  <Typography variant="body2">• Incluir leituras de glicemia no histórico.</Typography>
-                </Stack>
-              </Stack>
-            </GlassCard>
-          </Grid>
-          <Grid item xs={12} md={7}>
-            <Box
-              sx={{
-                p: { xs: 2.25, md: 3 },
-                borderRadius: 4,
-                border: '1px solid rgba(15,23,42,0.08)',
-                background: 'rgba(255,255,255,0.64)',
-                backdropFilter: 'blur(16px)',
-              }}
-            >
-              <Typography variant="body2" color="text.secondary">
-                A criança principal é carregada direto do banco. O seletor acima permite alternar perfis quando a família tiver mais de um cadastro,
-                sem quebrar o fluxo principal.
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
+        {activeChild && (
+          <GlassCard sx={{ p: { xs: 2.25, md: 3 } }}>
+            <DailyRoutineCard childId={activeChild.id} />
+          </GlassCard>
+        )}
       </Stack>
     </AppShell>
   );
