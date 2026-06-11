@@ -1,14 +1,27 @@
+from contextlib import asynccontextmanager
+
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import re
 
 from app.api.v1.router import api_router
 from app.core.config import get_settings
 from app.middleware.error_handler import register_error_handlers
+from app.services.notification_scheduler import check_and_generate_notifications
 
 settings = get_settings()
+scheduler = AsyncIOScheduler()
 
-app = FastAPI(title=settings.app_name)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    scheduler.add_job(check_and_generate_notifications, "interval", minutes=1)
+    scheduler.start()
+    yield
+    scheduler.shutdown()
+
+
+app = FastAPI(title=settings.app_name, lifespan=lifespan)
 
 # CORS configuration - temporarily allow all origins to remove CORS issues
 # WARNING: This is permissive and should be tightened for production

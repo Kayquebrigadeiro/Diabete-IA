@@ -17,4 +17,5 @@ tiktoken
 langchain
 langchain-community
 reactivex
+apscheduler
 
