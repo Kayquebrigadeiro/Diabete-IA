@@ -22,10 +22,11 @@ export function useCreateChild() {
 }
 
 // ============= MEDICATIONS =============
-export function useMedications() {
+export function useMedications(childId: string) {
   return useQuery({
-    queryKey: ['medications'],
-    queryFn: () => medicalApi.medications.list(),
+    queryKey: ['medications', childId],
+    queryFn: () => medicalApi.medications.list(childId),
+    enabled: Boolean(childId),
   });
 }
 
