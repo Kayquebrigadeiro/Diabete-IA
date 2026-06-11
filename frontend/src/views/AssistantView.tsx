@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { AppShell } from '../components/layout/AppShell';
-import { SectionHeader } from '../components/common/SectionHeader';
-import { Alert, Avatar, Box, Button, Card, CardContent, Chip, Divider, IconButton, InputAdornment, Paper, Stack, TextField, Typography } from '@mui/material';
+import { Alert, Avatar, Box, Button, Card, CardContent, Chip, CircularProgress, Divider, InputAdornment, Paper, Stack, TextField, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import PersonIcon from '@mui/icons-material/Person';
@@ -9,36 +8,22 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import { MessageList } from '../components/chat/MessageList';
-import type { ChatAnswer } from '../types';
 import { useActiveChild } from '../hooks/useActiveChild';
+import { useAuthContext } from '../context/AuthContext';
+import { useRAGChat } from '../hooks/useRAGChat';
 
 export default function AssistantView() {
   const { activeChild } = useActiveChild();
+  const { userId } = useAuthContext();
   const childLabel = activeChild?.name ?? 'criança ativa';
   const [question, setQuestion] = useState('');
-  const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant'; content: string; answer?: ChatAnswer }>>([]);
-  
-  const mockAnswer: ChatAnswer = {
-    answer: 'Em caso de hipoglicemia (glicemia abaixo de 70 mg/dL), aplique a regra dos 15: ofereça 15g de carboidratos rápidos (suco, mel, balas) e reavalie a glicemia em 15 minutos. Se ainda estiver baixa, repita o processo. Após normalizar, ofereça um lanche com carboidratos complexos.',
-    confidence_score: 0.93,
-    confidence_label: 'Alta',
-    citations: [
-      { document: 'Guia Completo para Pais e Responsáveis', chunk_index: 12, excerpt: 'Tratamento da hipoglicemia com a regra dos 15g de carboidratos rápidos.' },
-      { document: 'Protocolos ISPAD 2024', chunk_index: 8, excerpt: 'Manejo de hipoglicemia em crianças com DM1.' }
-    ],
-    fallback: false,
-  };
+  const { messages, loading, sendMessage } = useRAGChat(userId);
 
-  const handleSend = () => {
-    if (!question.trim()) return;
-    
-    setMessages(prev => [
-      ...prev,
-      { role: 'user', content: question },
-      { role: 'assistant', content: mockAnswer.answer, answer: mockAnswer }
-    ]);
+  const handleSend = async () => {
+    const text = question.trim();
+    if (!text || loading) return;
     setQuestion('');
+    await sendMessage(text);
   };
 
   const suggestedQuestions = [
@@ -51,21 +36,21 @@ export default function AssistantView() {
   return (
     <AppShell title="Chat IA">
       <Stack spacing={3}>
-        <Card 
+        <Card
           elevation={0}
-          sx={{ 
+          sx={{
             background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.12), rgba(245, 158, 11, 0.08))',
-            border: theme => theme.palette.mode === 'dark' 
-              ? '1px solid rgba(251, 146, 60, 0.2)' 
+            border: theme => theme.palette.mode === 'dark'
+              ? '1px solid rgba(251, 146, 60, 0.2)'
               : '1px solid rgba(251, 146, 60, 0.25)',
           }}
         >
           <CardContent>
             <Stack direction="row" spacing={2} alignItems="flex-start">
-              <Avatar 
-                sx={{ 
-                  bgcolor: 'primary.main', 
-                  width: 56, 
+              <Avatar
+                sx={{
+                  bgcolor: 'primary.main',
+                  width: 56,
                   height: 56,
                   boxShadow: '0 8px 16px rgba(251, 146, 60, 0.3)'
                 }}
@@ -77,11 +62,11 @@ export default function AssistantView() {
                   <Typography variant="h5" fontWeight={900}>
                     Assistente IA Auri para Diabetes Tipo 1
                   </Typography>
-                  <Chip 
-                    icon={<VerifiedIcon />} 
-                    label="Verificado" 
-                    size="small" 
-                    color="primary" 
+                  <Chip
+                    icon={<VerifiedIcon />}
+                    label="Verificado"
+                    size="small"
+                    color="primary"
                     sx={{ fontWeight: 700 }}
                   />
                 </Stack>
@@ -98,8 +83,8 @@ export default function AssistantView() {
           </CardContent>
         </Card>
 
-        <Alert 
-          severity="warning" 
+        <Alert
+          severity="warning"
           icon={<WarningAmberIcon />}
           sx={{ borderRadius: 3 }}
         >
@@ -161,7 +146,7 @@ export default function AssistantView() {
                               : '0 4px 12px rgba(251, 146, 60, 0.15)',
                           },
                         }}
-                        onClick={() => setQuestion(q.replace(/[⚡🍽️📊💉\s]+/, ''))}
+                        onClick={() => setQuestion(q.replace(/[⚡🍽️📊💉]\s*/g, ''))}
                       >
                         <Typography variant="body2" fontWeight={600}>
                           {q}
@@ -217,9 +202,9 @@ export default function AssistantView() {
                               <>
                                 <Divider />
                                 <Stack direction="row" spacing={1} alignItems="center">
-                                  <Chip 
-                                    label={`Confiança: ${msg.answer.confidence_label}`} 
-                                    size="small" 
+                                  <Chip
+                                    label={`Confiança: ${msg.answer.confidence_label}`}
+                                    size="small"
                                     color={msg.answer.confidence_score > 0.8 ? 'success' : 'warning'}
                                   />
                                   <Typography variant="caption" color="text.secondary">
@@ -255,6 +240,19 @@ export default function AssistantView() {
                 )}
               </Stack>
             ))}
+            {loading && (
+              <Stack direction="row" spacing={2}>
+                <Avatar sx={{ bgcolor: 'secondary.main' }}>
+                  <SmartToyIcon />
+                </Avatar>
+                <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
+                  <CircularProgress size={20} />
+                  <Typography variant="body2" color="text.secondary" sx={{ ml: 1.5 }}>
+                    A IA está digitando...
+                  </Typography>
+                </Box>
+              </Stack>
+            )}
           </Stack>
         )}
 
@@ -272,16 +270,18 @@ export default function AssistantView() {
         >
           <Stack direction="row" spacing={2}>
             <TextField
+              fullWidth
               value={question}
               onChange={(e) => setQuestion(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } }}
               placeholder={`Pergunte sobre o cuidado de ${childLabel}...`}
               multiline
               maxRows={4}
+              disabled={loading}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
-                    <SmartToyIcon color="primary" />
+                    {loading ? <CircularProgress size={20} color="primary" /> : <SmartToyIcon color="primary" />}
                   </InputAdornment>
                 ),
               }}
@@ -289,11 +289,11 @@ export default function AssistantView() {
             <Button
               variant="contained"
               onClick={handleSend}
-              disabled={!question.trim()}
+              disabled={!question.trim() || loading}
               sx={{ minWidth: 120, height: 56 }}
               endIcon={<SendIcon />}
             >
-              Enviar
+              {loading ? 'Aguarde...' : 'Enviar'}
             </Button>
           </Stack>
         </Paper>
